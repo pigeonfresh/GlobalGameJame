@@ -32,17 +32,16 @@
     position: absolute;
     height: 20rem;
     opacity: 0.5;
+    color: transparent;
 
     &.entrance {
       width: 15rem;
-      background: magenta;
       top: 20rem;
       left: 0;
     }
 
     &.basement {
       width: 60rem;
-      background: greenyellow;
       top: 40rem;
       left: 45rem;
     }
@@ -51,40 +50,34 @@
       top: 20rem;
       left: 15rem;
       width: 30rem;
-      background: blue;
     }
 
     &.toilette {
       top: 20rem;
       left: 45rem;
       width: 15rem;
-      background: mediumspringgreen;
     }
 
     &.kitchen {
       top: 20rem;
       left: 75rem;
       width: 30rem;
-      background: mediumorchid;
     }
 
     &.bedroom {
       top: 0;
       left: 30rem;
       width: 30rem;
-      background: coral;
     }
 
     &.bathroom {
       top: 0;
       left: 75rem;
       width: 30rem;
-      background: mediumturquoise;
     }
 
     &.stairs {
       width: 15rem;
-      background: lightgrey;
 
       &.topStairs {
         top: 0;

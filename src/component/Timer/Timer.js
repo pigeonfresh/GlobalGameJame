@@ -15,7 +15,7 @@ export default {
       this.isReady();
     },
     rotatePointer() {
-      const time = 3;
+      const time = 180;
       const { pointer } = this.$refs;
       TweenMax.to(pointer, time, {
         rotation: 360,
