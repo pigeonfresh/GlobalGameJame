@@ -6,9 +6,12 @@ const namespace = 'step';
 
 export const MOVE = `${namespace}/MOVE`;
 export const GET_CURRENT_STEP = `${namespace}/GET_CURRENT_STEP`;
+export const GET_DIRECTION = `${namespace}/GET_DIRECTION`;
 
 const CURRENT_STEP = 'currentStep';
 const CURRENT_FLOOR = 'currentFloor';
+const DIRECTION = 'direction';
+
 const DIRECTIONS = {
   UP: 'ArrowUp',
   DOWN: 'ArrowDown',
@@ -20,9 +23,11 @@ export default {
   state: {
     [CURRENT_FLOOR]: 1,
     [CURRENT_STEP]: 0,
+    [DIRECTION]: null,
   },
   getters: {
     [GET_CURRENT_STEP]: state => HOUSE[state[CURRENT_FLOOR]][state[CURRENT_STEP]],
+    [GET_DIRECTION]: state => state[DIRECTION],
   },
   mutations: {
     [MOVE]: (state, { direction }) => {
@@ -31,6 +36,7 @@ export default {
           d => d === DIRECTIONS.LEFT,
           () => {
             const newStep = Math.max(state[CURRENT_STEP] - 1, 0);
+            state[DIRECTION] = DIRECTIONS.LEFT;
             state[CURRENT_STEP] = newStep;
           },
         )
@@ -39,6 +45,7 @@ export default {
           () => {
             const maxStepFloor = HOUSE[state[CURRENT_FLOOR]].length - 1;
             const newStep = Math.min(state[CURRENT_STEP] + 1, maxStepFloor);
+            state[DIRECTION] = DIRECTIONS.RIGHT;
             state[CURRENT_STEP] = newStep;
           },
         )
@@ -50,6 +57,7 @@ export default {
               .on(
                 s => s === ROOMS.BOTTOM_STAIRS,
                 () => {
+                  state[DIRECTION] = DIRECTIONS.UP;
                   state[CURRENT_FLOOR] = 1;
                   state[CURRENT_STEP] = HOUSE[1].findIndex(r => r === ROOMS.MIDDLE_STAIRS_2);
                 },
@@ -57,6 +65,7 @@ export default {
               .on(
                 s => s === ROOMS.MIDDLE_STAIRS_1,
                 () => {
+                  state[DIRECTION] = DIRECTIONS.UP;
                   state[CURRENT_FLOOR] = 0;
                   state[CURRENT_STEP] = HOUSE[0].findIndex(r => r === ROOMS.TOP_STAIRS);
                 },
@@ -71,6 +80,7 @@ export default {
               .on(
                 s => s === ROOMS.TOP_STAIRS,
                 () => {
+                  state[DIRECTION] = DIRECTIONS.DOWN;
                   state[CURRENT_FLOOR] = 1;
                   state[CURRENT_STEP] = HOUSE[1].findIndex(r => r === ROOMS.MIDDLE_STAIRS_1);
                 },
@@ -78,6 +88,7 @@ export default {
               .on(
                 s => s === ROOMS.MIDDLE_STAIRS_2,
                 () => {
+                  state[DIRECTION] = DIRECTIONS.DOWN;
                   state[CURRENT_FLOOR] = 2;
                   state[CURRENT_STEP] = HOUSE[2].findIndex(r => r === ROOMS.BOTTOM_STAIRS);
                 },

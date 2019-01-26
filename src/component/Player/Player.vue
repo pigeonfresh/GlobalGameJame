@@ -2,9 +2,7 @@
 <script src="./Player.js"></script>
 
 <template>
-  <div
-    :class="[$style.playerWrapper, playerStyle]"
-  >
+  <div :class="[$style.playerWrapper, playerStyle, playerDirectionStyle]">
     <div :class="[$style.player]"></div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 import { mapMutations, mapGetters } from 'vuex';
 import { AbstractTransitionComponent } from 'vue-transition-component';
-import { GET_CURRENT_STEP } from '../../store/module/step/step';
+import { GET_CURRENT_STEP, GET_DIRECTION } from '../../store/module/step/step';
 import PlayerTransitionController from './PlayerTransitionController';
 import { GET_CAT_ROOM } from '../../store/module/cat/cat';
 
@@ -12,9 +12,13 @@ export default {
     ...mapGetters({
       playerRoom: GET_CURRENT_STEP,
       catRoom: GET_CAT_ROOM,
+      playerDirection: GET_DIRECTION,
     }),
     playerStyle() {
       return this.$style[this.playerRoom];
+    },
+    playerDirectionStyle() {
+      return this.$style[this.playerDirection];
     },
   },
   methods: {
