@@ -2,7 +2,7 @@
 <script src="./Cat.js"></script>
 
 <template>
-  <div :class="[$style.catWrapper, catPositionStyle]">
+  <div :class="[$style.catWrapper, catPositionStyle, catStatusStyle]">
     <div :class="[$style.cat]">
 
       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
@@ -36,6 +36,7 @@
         ></path>
       </svg>
       <p>{{catStatus}}</p>
+      <p>{{actionCounter}}/4</p>
     </div>
   </div>
 </template>
