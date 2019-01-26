@@ -3,7 +3,18 @@
 
 <template>
   <div :class="[$style.homePage]">
-    <LivingRoom />
-    <BathRoom />
+    <div :class="[$style.gameScreen]">
+
+
+      <LivingRoom :class="[$style.room, $style.livingRoom]" />
+      <BathRoom :class="[$style.room, $style.bathroom]" />
+      <Kitchen :class="[$style.room, $style.kitchen]" />
+      <Attic :class="[$style.room, $style.attic]" />
+      <BedRoom :class="[$style.room, $style.bedroom]" />
+
+
+    </div>
+
+
   </div>
 </template>
