@@ -1,7 +1,8 @@
 import { FlowManager, AbstractRegistrableComponent } from 'vue-transition-component';
 import { DeviceStateEvent } from 'seng-device-state-tracker';
-import { mapMutations, mapState } from 'vuex';
+import { mapMutations, mapState, mapGetters } from 'vuex';
 import { SET_DEVICE_STATE } from '../store/module/app/app';
+import { GET_CURRENT_STEP, MOVE } from '../store/module/step/step';
 
 // @vue/component
 export default {
@@ -10,6 +11,9 @@ export default {
   computed: {
     ...mapState({
       deviceState: state => state.app.deviceState,
+    }),
+    ...mapGetters({
+      getCurrentStep: GET_CURRENT_STEP,
     }),
   },
   created() {
@@ -22,7 +26,11 @@ export default {
   methods: {
     ...mapMutations({
       setDeviceState: SET_DEVICE_STATE,
+      move: MOVE,
     }),
+    mockKey(key) {
+      this.move({ direction: key });
+    },
     handleDeviceStateUpdate(event) {
       this.setDeviceState(event.data.state);
     },
