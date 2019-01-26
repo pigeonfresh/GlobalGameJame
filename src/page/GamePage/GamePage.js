@@ -7,17 +7,25 @@ import BedRoom from '../../component/BedRoom';
 import Player from '../../component/Player';
 import BathRoom from '../../component/BathRoom';
 import Timer from '../../component/Timer';
+import Toilette from '../../component/Toilette';
+import Basement from '../../component/Basement';
+import Entrance from '../../component/Entrance';
+import Stairs from '../../component/Stairs';
 
 // @vue/component
 export default {
   name: 'GamePage',
   components: {
     LivingRoom,
+    BathRoom,
     Kitchen,
     Attic,
     BedRoom,
+    Toilette,
+    Basement,
+    Entrance,
+    Stairs,
     Player,
-    BathRoom,
     Timer,
   },
   extends: AbstractPageTransitionComponent,
