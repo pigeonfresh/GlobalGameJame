@@ -2,7 +2,5 @@
 <script src="./Player.js"></script>
 
 <template>
-  <div :class="[$style.player]">
-
-  </div>
+  <div :class="[$style.player, playerStyle]"></div>
 </template>
