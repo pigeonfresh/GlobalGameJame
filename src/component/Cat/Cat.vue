@@ -2,8 +2,8 @@
 <script src="./Cat.js"></script>
 
 <template>
-  <div :class="[$style.catWrapper]">
-    <div :class="[$style.cat, catPositionStyle]">
+  <div :class="[$style.catWrapper, catPositionStyle]">
+    <div :class="[$style.cat]">
       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
         <path
           id="tail2"
