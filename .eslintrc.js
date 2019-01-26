@@ -10,7 +10,12 @@ module.exports = {
   env: {
     browser: true,
   },
-  extends: ['airbnb-base', 'prettier', 'plugin:vue/recommended', 'plugin:vue-types/strongly-recommended'],
+  extends: [
+    'airbnb-base',
+    'prettier',
+    'plugin:vue/recommended',
+    'plugin:vue-types/strongly-recommended',
+  ],
   plugins: ['import', 'prettier', 'vue'],
   settings: {
     'import/resolver': {
@@ -20,6 +25,7 @@ module.exports = {
     },
   },
   rules: {
+    'no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
     // don't require .vue extension when importing
     'import/extensions': [
       'error',
@@ -43,11 +49,9 @@ module.exports = {
   },
   overrides: [
     {
-      "files": [ "src/**/*.vue"],
-      "rules": {
-        'prettier/prettier': [
-          'off'
-        ],
+      files: ['src/**/*.vue'],
+      rules: {
+        'prettier/prettier': ['off'],
       },
     },
   ],
