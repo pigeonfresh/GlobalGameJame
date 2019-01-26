@@ -7,5 +7,6 @@
       <router-view/>
     </transition>
     <GameControls />
+    <AudioLibrary />
   </div>
 </template>

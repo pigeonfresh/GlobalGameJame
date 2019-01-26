@@ -3,6 +3,12 @@
 
 <template>
   <div :class="[$style.homePage]">
-    <router-link :to="{ name: 'game'}">Game</router-link>
+
+    <div :class="[$style.panel]">
+
+    </div>
+    <GlobalEvents
+      @keyup.space="handleSpaceBarClick"
+    />
   </div>
 </template>
