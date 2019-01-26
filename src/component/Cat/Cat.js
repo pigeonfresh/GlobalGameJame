@@ -26,6 +26,9 @@ export default {
     catStatusStyle() {
       return this.$style[this.catStatus];
     },
+    statusBarWidth() {
+      return (this.actionCounter * 100) / 4;
+    },
   },
   watch: {
     playerRoom(room) {
