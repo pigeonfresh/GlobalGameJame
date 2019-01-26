@@ -1,7 +1,7 @@
 import { AbstractTransitionComponent } from 'vue-transition-component';
 import { mapGetters, mapActions } from 'vuex';
 import CatTransitionController from './CatTransitionController';
-import { GET_CAT_ROOM, INIT_CAT } from '../../store/module/cat/cat';
+import { GET_CAT_ROOM, INIT_CAT, GET_CAT_STATUS } from '../../store/module/cat/cat';
 import { GET_CURRENT_STEP } from '../../store/module/step/step';
 
 // @vue/component
@@ -12,6 +12,7 @@ export default {
     ...mapGetters({
       catRoom: GET_CAT_ROOM,
       playerRoom: GET_CURRENT_STEP,
+      catStatus: GET_CAT_STATUS,
     }),
     catPositionStyle() {
       return this.$style[this.catRoom];
