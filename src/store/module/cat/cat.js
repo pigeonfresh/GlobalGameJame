@@ -72,9 +72,9 @@ export default {
       }, IDLE_TIME);
       commit(SET, { key: TIMER, value: timer });
     },
-    [START_MEOW]: ({ commit, dispatch }) => {
+    [START_MEOW]: ({ commit, dispatch, state }) => {
       commit(SET, { key: STATUS, value: CAT_STATUS.MEOWING });
-      eventBus.$emit('play-sound-fx', SOUND_FX.MEOW);
+      state[ACTION_COUNTER] === 0 && eventBus.$emit('play-sound-fx', SOUND_FX.MEOW);
       const timer = setTimeout(() => {
         dispatch(STAR_HAVOC);
       }, MEOW_TIME);
@@ -96,6 +96,7 @@ export default {
       commit(SET, { key: TIMER, value: timer });
     },
     [START_HANDLED]: ({ commit, state, dispatch }) => {
+      eventBus.$emit('play-sound-fx', SOUND_FX.PURR);
       clearTimeout(state[TIMER]);
       state[INTERVAL] && clearInterval(state[INTERVAL]);
       commit(SET, { key: STATUS, value: CAT_STATUS.NEUTRALIZED });
@@ -106,6 +107,7 @@ export default {
       const counter = state[ACTION_COUNTER];
       if ([CAT_STATUS.IDLE, CAT_STATUS.MEOWING, CAT_STATUS.CREATING_CAOS].includes(state[STATUS])) {
         commit(SET, { key: ACTION_COUNTER, value: counter + 1 });
+        eventBus.$emit('play-sound-fx', SOUND_FX.PURR);
         if (counter === ACTION_TO_MAX - 1) {
           dispatch(START_HANDLED);
         }

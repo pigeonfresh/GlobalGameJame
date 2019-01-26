@@ -19,9 +19,9 @@ export default {
       src: [`${this.$staticRoot}audio/sfx.mp3`],
       sprite: {
         [SOUND_FX.MEOW]: [0, 2000],
-        [SOUND_FX.PURR]: [2000, 6000],
+        [SOUND_FX.PURR]: [2000, 3000],
         [SOUND_FX.NOM]: [6000, 7000],
-        [SOUND_FX.PETTING]: [7000, 9000],
+        [SOUND_FX.PETTING]: [7000, 8000],
         [SOUND_FX.DOORBELL]: [9000, 11000],
         [SOUND_FX.PHONERINGING]: [11000, 12000],
         [SOUND_FX.PHONEHANGUP]: [12000, 1300],
@@ -50,6 +50,7 @@ export default {
   },
   methods: {
     playSoundFX(id) {
+      console.log(id);
       this.soundFX.play(id);
     },
     startSoundTrack() {
