@@ -1,8 +1,4 @@
 .game-controls {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: magenta;
-  padding: 3rem;
+  visibility: hidden;
+  pointer-events: none;
 }
