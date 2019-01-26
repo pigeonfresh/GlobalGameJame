@@ -3,6 +3,9 @@
 
 <template>
   <div :class="[$style.timer]">
-    <h2>Timer</h2>
+    <div
+      ref="pointer"
+      :class="[$style.pointer]"
+    />
   </div>
 </template>
