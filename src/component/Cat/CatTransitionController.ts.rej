@@ -1,0 +1,5 @@
+diff a/src/component/Cat/CatTransitionController.ts b/src/component/Cat/CatTransitionController.ts	(rejected hunks)
+@@ -56,2 +55 @@ export default class CatTransitionController extends AbstractTransitionControlle
+-    timeline
+-
++    timeline;

@@ -1,3 +1,18 @@
+@keyframes tail {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .catWrapper {
   position: absolute;
   top: 0;
@@ -17,8 +32,13 @@
       stroke-width: 0.37px;
     }
 
-    .tail-2 {
-      opacity: 0;
+    .tail {
+      opacity: 0.5;
+      animation: tail 2s infinite;
+
+      &.tail2 {
+        animation-delay: 1s;
+      }
     }
 
     .paw {
