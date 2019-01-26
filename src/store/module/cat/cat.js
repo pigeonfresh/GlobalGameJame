@@ -1,5 +1,7 @@
 import ROOMS from '../../../data/enum/Rooms';
 import { GET_CURRENT_STEP } from '../step/step';
+import eventBus from '../../../util/eventBus';
+import SOUND_FX from '../../../data/enum/SoundFX';
 
 const namespace = 'cat';
 const ROOM = 'room';
@@ -72,6 +74,7 @@ export default {
     },
     [START_MEOW]: ({ commit, dispatch }) => {
       commit(SET, { key: STATUS, value: CAT_STATUS.MEOWING });
+      eventBus.$emit('play-sound-fx', SOUND_FX.MEOW);
       const timer = setTimeout(() => {
         dispatch(STAR_HAVOC);
       }, MEOW_TIME);
