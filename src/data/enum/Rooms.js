@@ -12,6 +12,9 @@ export default {
   KITCHEN_1: 'kitchen-1',
   KITCHEN_2: 'kitchen-2',
   MIDDLE_STAIRS_2: 'middlestairs-2',
-  BASEMENT: 'basement',
+  BASEMENT_1: 'basement-1',
+  BASEMENT_2: 'basement-2',
+  BASEMENT_3: 'basement-3',
+  BASEMENT_4: 'basement-4',
   BOTTOM_STAIRS: 'bottom-stairs',
 };
