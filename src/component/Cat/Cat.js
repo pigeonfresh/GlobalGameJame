@@ -11,6 +11,9 @@ export default {
     ...mapGetters({
       getCatRoom: GET_CAT_ROOM,
     }),
+    catPositionStyle() {
+      return this.$style[this.getCatRoom];
+    },
   },
   created() {
     this.initCat();
