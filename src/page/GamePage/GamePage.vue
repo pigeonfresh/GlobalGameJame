@@ -10,26 +10,22 @@
           <div :class="[$style.roomsWrapper]">
 
             <BedRoom :class="[$style.room, $style.bedroom]"/>
-            <Stairs :class="[$style.room, $style.topStairs]"/>
+            <Stairs :class="[$style.room, $style.stairs, $style.topStairs]"/>
             <BathRoom :class="[$style.room, $style.bathroom]"/>
             <Toilette :class="[$style.room, $style.toilette]"/>
 
-            <Entrance :class="[$style.room, $style.entrace]"/>
+            <Entrance :class="[$style.room, $style.entrance]"/>
             <LivingRoom :class="[$style.room, $style.livingRoom]"/>
-            <Stairs :class="[$style.room, $style.midleStairs]"/>
+            <Stairs :class="[$style.room, $style.stairs, $style.middleStairs1]"/>
             <Kitchen :class="[$style.room, $style.kitchen]"/>
-            <Attic :class="[$style.room, $style.attic]"/>
-            <Stairs :class="[$style.room, $style.midleStairs2]"/>
+            <Stairs :class="[$style.room, $style.stairs, $style.middleStairs2]"/>
 
-            <Stairs :class="[$style.room, $style.midleStairs2]"/>
+            <Stairs :class="[$style.room, $style.stairs, $style.bottomStairs]"/>
             <Basement :class="[$style.room, $style.basement]"/>
 
           </div>
 
           <Player :class="[$style.player]" />
-
-
-
 
         </div>
       </div>

@@ -2,7 +2,6 @@ import { AbstractPageTransitionComponent } from 'vue-transition-component';
 import GamePageTransitionController from './GamePageTransitionController';
 import LivingRoom from '../../component/LivingRoom';
 import Kitchen from '../../component/Kitchen';
-import Attic from '../../component/Attic';
 import BedRoom from '../../component/BedRoom';
 import Player from '../../component/Player';
 import BathRoom from '../../component/BathRoom';
@@ -19,7 +18,6 @@ export default {
     LivingRoom,
     BathRoom,
     Kitchen,
-    Attic,
     BedRoom,
     Toilette,
     Basement,

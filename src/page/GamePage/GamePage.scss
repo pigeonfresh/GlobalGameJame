@@ -5,8 +5,8 @@
   height: 100%;
 
   .gameScreen {
-    width: 1000px;
-    height: 800px;
+    width: 120rem;
+    height: 60rem;
     background: #fff;
     margin-left: auto;
     margin-right: auto;
@@ -14,37 +14,81 @@
   }
 
   .room {
-    border: 1px solid red;
     position: absolute;
-    height: 200px;
+    height: 20rem;
+
+    &.entrance {
+      width: 15rem;
+      background: magenta;
+      top: 20rem;
+      left: 0;
+    }
+
+    &.basement {
+      width: 60rem;
+      background: greenyellow;
+      top: 40rem;
+      left: 45rem;
+    }
 
     &.living-room {
-      bottom: 0;
-      left: 0;
-      width: 600px;
+      top: 20rem;
+      left: 15rem;
+      width: 30rem;
+      background: blue;
+    }
+
+    &.toilette {
+      top: 20rem;
+      left: 45rem;
+      width: 15rem;
+      background: mediumspringgreen;
     }
 
     &.kitchen {
-      bottom: 0;
-      right: 0;
-      width: 400px;
-    }
-
-    &.attic {
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 20rem;
+      left: 75rem;
+      width: 30rem;
+      background: mediumorchid;
     }
 
     &.bedroom {
-      top: 400px;
-      width: 500px;
+      top: 0;
+      left: 30rem;
+      width: 30rem;
+      background: coral;
     }
 
     &.bathroom {
-      top: 200px;
-      left: 200px;
-      width: 300px;
+      top: 0;
+      left: 75rem;
+      width: 30rem;
+      background: mediumturquoise;
+    }
+
+    &.stairs {
+      width: 15rem;
+      background: lightgrey;
+
+      &.topStairs {
+        top: 0;
+        left: 60rem;
+      }
+
+      &.middleStairs1 {
+        top: 20rem;
+        left: 60rem;
+      }
+
+      &.middleStairs2 {
+        top: 20rem;
+        left: 105rem;
+      }
+
+      &.bottomStairs {
+        top: 40rem;
+        left: 105rem;
+      }
     }
   }
 
