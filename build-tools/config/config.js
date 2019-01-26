@@ -70,9 +70,9 @@ module.exports = {
   /* tooling */
   enableBundleAnalyzer: !!argv.analyze,
   lintStaged: {
-    eslintEnabled: true,
-    tslintEnabled: true,
-    stylelintEnabled: true,
+    eslintEnabled: false,
+    tslintEnabled: false,
+    stylelintEnabled: false,
   },
 
   /* environment variables (set using DefinePlugin) */

@@ -15,7 +15,10 @@
         <BathRoom :class="[$style.room, $style.bathroom]" />
       </div>
 
-      <Timer :class="[$style.timer]" />
+      <Timer
+        componentId="Timer"
+        :class="[$style.timer]"
+      />
 
 
     </div>

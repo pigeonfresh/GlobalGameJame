@@ -21,11 +21,20 @@ export default class GamePageTransitionController extends AbstractTransitionCont
   ): void {
     const element = parent.$el;
 
-    timeline.from(element, 1.5, {
-      autoAlpha: 0,
-      y: 200,
-      ease: Expo.easeInOut,
-    });
+    timeline.addLabel('start', 0);
+
+    timeline.from(
+      element,
+      1.5,
+      {
+        autoAlpha: 0,
+        y: 200,
+        ease: Expo.easeInOut,
+      },
+      'start',
+    );
+
+    timeline.add(this.getTimeline('Timer'), 'start');
   }
 
   /**

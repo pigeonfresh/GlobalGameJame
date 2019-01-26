@@ -4,7 +4,7 @@ import {
 } from 'vue-transition-component';
 import { TimelineMax } from 'gsap';
 
-export default class TimerTransitionController extends AbstractTransitionController {
+export default class PopupOverlayTransitionController extends AbstractTransitionController {
   /**
    * Use this method to setup your transition in timeline
    *
@@ -18,20 +18,7 @@ export default class TimerTransitionController extends AbstractTransitionControl
     timeline: TimelineMax,
     parent: IAbstractTransitionComponent,
     id: string,
-  ): void {
-    timeline.fromTo(
-      parent.$el,
-      2,
-      {
-        autoAlpha: 0,
-        x: 120,
-      },
-      {
-        autoAlpha: 1,
-        x: 0,
-      },
-    );
-  }
+  ): void {}
 
   /**
    * Use this method to setup your transition out timeline
