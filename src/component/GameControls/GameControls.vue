@@ -8,8 +8,8 @@
       @keyup.right="handleDirectionClick('ArrowRight')"
       @keyup.up="handleDirectionClick('ArrowUp')"
       @keyup.down="handleDirectionClick('ArrowDown')"
-      @keyup.z="handleActionClick('Action-1')"
-      @keyup.x="handleActionClick('Action-2')"
+      @keyup.z="handleActionZClick"
+      @keyup.x="handleActionXClick"
     />
   </div>
 </template>

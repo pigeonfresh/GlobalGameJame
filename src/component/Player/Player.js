@@ -17,11 +17,6 @@ export default {
       return this.$style[this.playerRoom];
     },
   },
-  watch: {
-    playerRoom(room) {
-      room === this.catRoom && console.log('player says: HOLA CATO!');
-    },
-  },
   methods: {
     ...mapMutations({}),
     handleAllComponentsReady() {
