@@ -1,24 +1,27 @@
 .player {
   position: absolute;
-  background: blue;
-  height: 50px;
-  width: 50px;
-  bottom: 2rem;
-  left: 2rem;
+  height: 200px;
+  width: 150px;
   z-index: 9;
 
-  &.isCleaning {
-    background: red;
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(red, blue);
+    content: '';
   }
 
   &.bedroom-1 {
-    top: 2rem;
-    left: 2rem;
+    top: 0;
+    left: 30rem;
   }
 
   &.bedroom-2 {
-    top: 3rem;
-    left: 3rem;
+    top: 0;
+    left: 45rem;
   }
 
   &.top-stairs {
@@ -26,58 +29,83 @@
     left: 4rem;
   }
 
-  &.bathroom {
-    top: 5rem;
-    left: 5rem;
+  &.bathroom-1 {
+    top: 0;
+    left: 75rem;
+  }
+
+  &.bathroom-2 {
+    top: 0;
+    left: 90rem;
   }
 
   &.toilet {
-    top: 6rem;
-    left: 6rem;
+    top: 20rem;
+    left: 45rem;
   }
 
   &.entrance {
-    top: 7rem;
-    left: 7rem;
+    top: 20rem;
+    left: 0;
   }
 
   &.livingroom-1 {
-    top: 8rem;
-    left: 8rem;
-  }
-
-  &.livingroom-2 {
-    top: 9rem;
-    left: 9rem;
-  }
-
-  &.middlestairs-1 {
-    top: 10rem;
-    left: 10rem;
-  }
-
-  &.kitchen-1 {
-    top: 12rem;
-    left: 12rem;
-  }
-
-  &.kitchen-2 {
-    top: 13rem;
-    left: 13rem;
-  }
-
-  &.middlestairs-2 {
-    top: 14rem;
-    left: 14rem;
-  }
-
-  &.basement {
-    top: 15rem;
+    top: 20rem;
     left: 15rem;
   }
 
+  &.livingroom-2 {
+    top: 20rem;
+    left: 30rem;
+  }
+
+  &.middlestairs-1 {
+    top: 20rem;
+    left: 60rem;
+  }
+
+  &.kitchen-1 {
+    top: 20rem;
+    left: 75rem;
+  }
+
+  &.kitchen-2 {
+    top: 20rem;
+    left: 90rem;
+  }
+
+  &.middlestairs-2 {
+    top: 20rem;
+    left: 105rem;
+  }
+
+  &.top-stairs {
+    top: 0;
+    left: 60rem;
+  }
+
+  &.basement-1 {
+    top: 40rem;
+    left: 45rem;
+  }
+
+  &.basement-2 {
+    top: 40rem;
+    left: 60rem;
+  }
+
+  &.basement-3 {
+    top: 40rem;
+    left: 75rem;
+  }
+
+  &.basement-4 {
+    top: 40rem;
+    left: 90rem;
+  }
+
   &.bottom-stairs {
-    top: 16rem;
-    left: 16rem;
+    top: 40rem;
+    left: 105rem;
   }
 }
