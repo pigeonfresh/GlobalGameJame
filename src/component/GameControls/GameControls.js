@@ -1,17 +1,17 @@
 import { AbstractTransitionComponent } from 'vue-transition-component';
-import GameControlsTransitionController from './GameControlsTransitionController';
 import { mapGetters, mapMutations } from 'vuex';
+import GlobalEvents from 'vue-global-events';
+import GameControlsTransitionController from './GameControlsTransitionController';
 import { GET_CURRENT_STEP, MOVE } from '../../store/module/step/step';
 import { SET_DEVICE_STATE } from '../../store/module/app/app';
-import GlobalEvents from 'vue-global-events';
 
 // @vue/component
 export default {
   name: 'GameControls',
-  extends: AbstractTransitionComponent,
   components: {
     GlobalEvents,
   },
+  extends: AbstractTransitionComponent,
   computed: {
     ...mapGetters({
       getCurrentStep: GET_CURRENT_STEP,
@@ -34,6 +34,9 @@ export default {
     },
     handleKeyUp() {
       console.log('fooooooooooooo');
+    },
+    handleActionClick(key) {
+      console.log(key);
     },
     handleDirectionClick(key) {
       this.move({ direction: key });
