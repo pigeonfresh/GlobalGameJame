@@ -5,6 +5,8 @@ import Kitchen from '../../component/Kitchen';
 import Attic from '../../component/Attic';
 import BedRoom from '../../component/BedRoom';
 import Player from '../../component/Player';
+import BathRoom from '../../component/BathRoom';
+import Timer from '../../component/Timer';
 
 // @vue/component
 export default {
@@ -15,6 +17,8 @@ export default {
     Attic,
     BedRoom,
     Player,
+    BathRoom,
+    Timer,
   },
   extends: AbstractPageTransitionComponent,
   methods: {
