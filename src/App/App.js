@@ -1,14 +1,26 @@
 import { FlowManager, AbstractRegistrableComponent } from 'vue-transition-component';
 import { DeviceStateEvent } from 'seng-device-state-tracker';
 import { mapState } from 'vuex';
-import { SET_DEVICE_STATE } from '../store/module/app/app';
 import GameControls from '../component/GameControls';
+import { Howl, Howler } from 'howler';
 
 // @vue/component
 export default {
   name: 'App',
   components: {
     GameControls,
+  },
+  mounted() {
+    const soundtrack = `${this.$staticRoot}audio/frolic.mp3`;
+
+    console.log(soundtrack);
+
+    const music = new Howl({
+      src: [soundtrack],
+    });
+    console.log(music);
+
+    music.play();
   },
   extends: AbstractRegistrableComponent,
   computed: {
