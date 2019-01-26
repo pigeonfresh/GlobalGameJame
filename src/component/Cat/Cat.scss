@@ -20,6 +20,9 @@
   height: 200px;
   width: 150px;
   z-index: 5;
+  display: flex;
+  // align-items: flex-end;
+  // justify-content: center;
 
   .cat {
     height: 7.5rem;
@@ -139,5 +142,19 @@
   &.bottom-stairs {
     top: 40rem;
     left: 105rem;
+  }
+}
+
+.actionCounterBar {
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 10px;
+  width: 100px;
+  background: white;
+
+  span {
+    height: 100%;
+    background: repeating-linear-gradient(-50deg, white 0px, white 3px, red 3px, red 6px);
+    display: block;
   }
 }

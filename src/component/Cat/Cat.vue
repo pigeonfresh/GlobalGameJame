@@ -37,6 +37,9 @@
       </svg>
       <p>{{catStatus}}</p>
       <p>{{actionCounter}}/4</p>
+      <div :class="[$style.actionCounterBar]">
+        <span></span>
+      </div>
     </div>
   </div>
 </template>
