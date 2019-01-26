@@ -1,8 +1,10 @@
-.player {
+.cat {
   position: absolute;
+  top: 0;
+  left: 0;
   height: 200px;
   width: 150px;
-  z-index: 10;
+  z-index: 5;
 
   &::after {
     position: absolute;
@@ -10,7 +12,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(red, blue);
+    background: linear-gradient(red, green, red, blue);
     content: '';
   }
 

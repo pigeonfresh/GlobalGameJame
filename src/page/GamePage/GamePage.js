@@ -10,6 +10,7 @@ import Toilette from '../../component/Toilette';
 import Basement from '../../component/Basement';
 import Entrance from '../../component/Entrance';
 import Stairs from '../../component/Stairs';
+import Cat from '../../component/Cat';
 
 // @vue/component
 export default {
@@ -25,6 +26,7 @@ export default {
     Stairs,
     Player,
     Timer,
+    Cat,
   },
   extends: AbstractPageTransitionComponent,
   methods: {

@@ -26,6 +26,7 @@
           </div>
 
           <Player :class="[$style.player]" />
+          <Cat :class="[$style.cat]" />
 
         </div>
       </div>
