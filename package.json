@@ -44,6 +44,7 @@
     "seng-device-state-tracker": "^1.1.4",
     "seng-scss": "^1.0.0",
     "vue": "^2.2.5",
+    "vue-global-events": "^1.1.0",
     "vue-i18n-manager": "^3.2.2",
     "vue-router": "^3.0.1",
     "vue-transition-component": "^2.0.6",

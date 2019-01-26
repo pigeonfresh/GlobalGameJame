@@ -6,11 +6,6 @@
     <transition @leave="onLeave">
       <router-view/>
     </transition>
-    <div>
-      <button @click="mockKey('ArrowUp')">🔼</button>
-      <button @click="mockKey('ArrowRight')">▶️</button>
-      <button @click="mockKey('ArrowDown')">🔽</button>
-      <button @click="mockKey('ArrowLeft')">◀️</button>
-    </div>
+    <GameControls />
   </div>
 </template>

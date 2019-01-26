@@ -1,5 +1,13 @@
 .player {
+  position: absolute;
   background: blue;
   height: 50px;
   width: 50px;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 9;
+
+  &.isCleaning {
+    background: red;
+  }
 }

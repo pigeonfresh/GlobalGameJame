@@ -1,3 +1,4 @@
+import { mapMutations, mapGetters } from 'vuex';
 import { AbstractTransitionComponent } from 'vue-transition-component';
 import PlayerTransitionController from './PlayerTransitionController';
 
@@ -6,6 +7,7 @@ export default {
   name: 'Player',
   extends: AbstractTransitionComponent,
   methods: {
+    ...mapMutations({}),
     handleAllComponentsReady() {
       this.transitionController = new PlayerTransitionController(this);
       this.isReady();
