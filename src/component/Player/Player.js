@@ -2,6 +2,7 @@ import { mapMutations, mapGetters } from 'vuex';
 import { AbstractTransitionComponent } from 'vue-transition-component';
 import { GET_CURRENT_STEP } from '../../store/module/step/step';
 import PlayerTransitionController from './PlayerTransitionController';
+import { GET_CAT_ROOM } from '../../store/module/cat/cat';
 
 // @vue/component
 export default {
@@ -9,10 +10,16 @@ export default {
   extends: AbstractTransitionComponent,
   computed: {
     ...mapGetters({
-      getCurrentStep: GET_CURRENT_STEP,
+      playerRoom: GET_CURRENT_STEP,
+      catRoom: GET_CAT_ROOM,
     }),
     playerStyle() {
-      return this.$style[this.getCurrentStep];
+      return this.$style[this.playerRoom];
+    },
+  },
+  watch: {
+    playerRoom(room) {
+      room === this.catRoom && console.log('player says: HOLA CATO!');
     },
   },
   methods: {

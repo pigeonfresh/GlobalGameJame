@@ -1,4 +1,5 @@
 import ROOMS from '../../../data/enum/Rooms';
+import { GET_CURRENT_STEP } from '../step/step';
 
 const namespace = 'cat';
 const ROOM = 'room';
@@ -20,7 +21,7 @@ export default {
     },
   },
   actions: {
-    [MOVE_CAT]: ({ commit, state }) => {
+    [MOVE_CAT]: ({ commit, state, getters }) => {
       const catRooms = [
         ROOMS.BEDROOM_1,
         ROOMS.BEDROOM_2,
@@ -35,7 +36,7 @@ export default {
         ROOMS.BASEMENT_2,
         ROOMS.BASEMENT_3,
         ROOMS.BASEMENT_4,
-      ].filter(r => r !== state[ROOM]);
+      ].filter(r => r !== state[ROOM] || r === getters[GET_CURRENT_STEP]); // dont go if player is there
       const randomRoom = Math.floor(Math.random() * catRooms.length - 1);
       commit(SET_ROOM, catRooms[randomRoom]);
     },
