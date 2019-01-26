@@ -15,7 +15,6 @@
         <BedRoom :class="[$style.room, $style.bedroom]" />
 
       </div>
-
       <Player :class="[$style.player]"/>
 
 
