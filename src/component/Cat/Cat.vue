@@ -2,7 +2,7 @@
 <script src="./Cat.js"></script>
 
 <template>
-  <div :class="[$style.catWrapper, catPositionStyle]">
+  <div :class="[$style.catWrapper, catPositionStyle, catStatusStyle]">
     <div :class="[$style.cat]">
       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
         <path id="tail2" :class="[$style.cls, $style.tail, $style.tail1]" d="M10.4 26c1-3.29 5.75-1.87 8.06-.83 3.56 1.6 6.8 3.65 8.87 7 .25.42.49.84.71 1.28a19.58 19.58 0 0 1 2 10.48c-.17 2-.56 4.12.21 6a7.79 7.79 0 0 0 3.39 3.54 2.39 2.39 0 0 1 1.17 2.27l-.15 1.82a2.4 2.4 0 0 1-3.66 1.8c-2.61-1.76-5.4-4-6.48-7.12-1.35-3.9.09-8.29-.09-12.31a9.35 9.35 0 0 0-4-7.13 20.48 20.48 0 0 0-6.21-2.8c-1.83-.57-4.49-1.77-3.82-4z"/>
@@ -31,6 +31,7 @@
         ></path>
       </svg>
       <p>{{catStatus}}</p>
+      <p>{{actionCounter}}/4</p>
     </div>
   </div>
 </template>
