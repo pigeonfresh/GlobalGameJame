@@ -48,5 +48,10 @@ export default class CatTransitionController extends AbstractTransitionControlle
     timeline: TimelineMax,
     parent: IAbstractTransitionComponent,
     id: string,
-  ): void {}
+  ): void {
+    const tail = parent.$el;
+    console.log(tail);
+
+    timeline;
+  }
 }
