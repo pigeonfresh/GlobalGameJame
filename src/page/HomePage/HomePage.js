@@ -3,6 +3,7 @@ import BathRoom from '../../component/Bathroom';
 import Kitchen from '../../component/Kitchen';
 import Attic from '../../component/Attic';
 import BedRoom from '../../component/BedRoom';
+import Player from '../../component/Player';
 
 // @vue/component
 export default {
@@ -13,5 +14,6 @@ export default {
     Kitchen,
     Attic,
     BedRoom,
+    Player,
   },
 };
