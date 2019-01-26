@@ -3,6 +3,6 @@
 
 <template>
   <div :class="[$style.player]">
-    bla
+    <h2>Player</h2>
   </div>
 </template>
