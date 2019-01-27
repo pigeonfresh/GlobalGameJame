@@ -57,6 +57,10 @@
   &.bathroom-2 {
     top: 0;
     left: 90rem;
+
+    .player {
+      transform: scaleX(-1);
+    }
   }
 
   &.toilet {
