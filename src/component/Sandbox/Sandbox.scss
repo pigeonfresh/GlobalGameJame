@@ -1,0 +1,13 @@
+.sandbox {
+  .step {
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .cls1 {
+    fill: #231f20;
+  }
+}
