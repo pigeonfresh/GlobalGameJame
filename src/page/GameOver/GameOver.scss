@@ -14,16 +14,27 @@
     position: relative;
   }
 
+  .download {
+    position: absolute;
+    bottom: 67px;
+    right: 72px;
+    width: 34rem;
+    height: 10rem;
+    z-index: 10;
+  }
+
   .score {
     position: absolute;
-    top: 38rem;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    font-size: 4rem;
+    top: 453px;
+    width: 400px;
+    left: 40rem;
+    font-size: 6rem;
     font-family: Arial, sans-serif;
     font-weight: bold;
-    color: black;
-    background: red;
+    color: #fff;
+  }
+
+  .cls2 {
+    fill: #fff;
   }
 }
