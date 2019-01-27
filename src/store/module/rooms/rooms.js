@@ -54,10 +54,12 @@ export default {
   },
   mutations: {
     [DESTROY_ROOM]: (state, { room }) => {
-      if (state[ROOMS][room].pointable) {
-        state[ROOMS][room].points = Math.max(0, state[ROOMS][room].points - DESTRUCTION_STEP);
-      } else {
-        state[ROOMS][room].needsAction = true;
+      if (state[ROOMS][room]) {
+        if (state[ROOMS][room].pointable) {
+          state[ROOMS][room].points = Math.max(0, state[ROOMS][room].points - DESTRUCTION_STEP);
+        } else {
+          state[ROOMS][room].needsAction = true;
+        }
       }
     },
     [SET]: (state, { key, value }) => {

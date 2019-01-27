@@ -3,6 +3,5 @@
 
 <template>
   <div :class="[$style.audioLibrary]">
-    <h2>AudioLibrary</h2>
   </div>
 </template>
