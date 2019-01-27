@@ -9,5 +9,10 @@
       :points="getKitchen1.points"
       :needs-action="getKitchen1.needsAction"
     />
+
+    <CatFood
+      :class="[$style.catFood]"
+      componentId="catFood"
+    />
   </div>
 </template>

@@ -3,4 +3,13 @@
     width: 15rem;
     height: 20rem;
   }
+
+  .cat-food {
+    width: 15rem;
+    height: 20rem;
+    position: absolute;
+    bottom: 0.3rem;
+    left: 15rem;
+    z-index: 9;
+  }
 }
