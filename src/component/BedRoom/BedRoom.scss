@@ -1,4 +1,6 @@
 .bed-room {
+  position: relative;
+
   .curtains {
     position: absolute;
     top: 55px;
@@ -6,5 +8,13 @@
     left: 7.1px;
     width: 15rem;
     z-index: 9;
+  }
+
+  .phone {
+    position: absolute;
+    width: 15rem;
+    height: 20rem;
+    left: 15rem;
+    top: 0;
   }
 }
