@@ -42,7 +42,7 @@ const CAT_STATUS = {
 
 export default {
   state: {
-    [ROOM]: ROOMS.BEDROOM_1,
+    [ROOM]: null,
     [STATUS]: CAT_STATUS.IDLE,
     [TIMER]: null,
     [INTERVAL]: null,

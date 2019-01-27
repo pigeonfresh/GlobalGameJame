@@ -115,6 +115,30 @@
   &.bathroom-2 {
     top: 0;
     left: 90rem;
+
+    .cat {
+      height: 7.5rem;
+      width: 7.5rem;
+      top: 8.5rem;
+      left: 0.3rem;
+      position: relative;
+      transform: rotateY(180deg);
+
+      &.creating-caos {
+        .paw {
+          opacity: 0.5;
+          animation: tail 0.2s infinite;
+
+          &.paw2 {
+            animation-delay: 0.1s;
+          }
+
+          &.paw3 {
+            animation-delay: 0.2s;
+          }
+        }
+      }
+    }
   }
 
   &.toilet {
@@ -159,6 +183,29 @@
   &.livingroom-2 {
     top: 20rem;
     left: 30rem;
+
+    .cat {
+      height: 7.5rem;
+      width: 7.5rem;
+      top: 7.4rem;
+      left: 0.8rem;
+      position: relative;
+
+      &.creating-caos {
+        .paw {
+          opacity: 0.5;
+          animation: tail 0.2s infinite;
+
+          &.paw2 {
+            animation-delay: 0.1s;
+          }
+
+          &.paw3 {
+            animation-delay: 0.2s;
+          }
+        }
+      }
+    }
   }
 
   &.middlestairs-1 {
