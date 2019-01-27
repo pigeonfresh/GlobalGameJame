@@ -11,6 +11,7 @@ import Basement from '../../component/Basement';
 import Entrance from '../../component/Entrance';
 import Stairs from '../../component/Stairs';
 import Cat from '../../component/Cat';
+import Bg from '../../component/Bg';
 
 // @vue/component
 export default {
@@ -27,6 +28,7 @@ export default {
     Player,
     Timer,
     Cat,
+    Bg,
   },
   extends: AbstractPageTransitionComponent,
   methods: {
