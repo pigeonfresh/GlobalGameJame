@@ -1,6 +1,7 @@
 import { AbstractTransitionComponent } from 'vue-transition-component';
 import VueTypes from 'vue-types';
 import ToiletPaperTransitionController from './ToiletPaperTransitionController';
+import { match } from '../../store/utils';
 
 // @vue/component
 export default {
@@ -11,7 +12,27 @@ export default {
   },
   computed: {
     activeStep() {
-      return 1;
+      let step;
+      match(this.points)
+        .on(
+          p => p <= 100 && p > 60,
+          () => {
+            step = 1;
+          },
+        )
+        .on(
+          p => p <= 60 && p > 0,
+          () => {
+            step = 2;
+          },
+        )
+        .on(
+          p => p === 0,
+          () => {
+            step = 3;
+          },
+        );
+      return step;
     },
   },
   methods: {

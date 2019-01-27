@@ -3,6 +3,6 @@
 
 <template>
   <div :class="[$style.toilette]">
-    <ToiletPaper componentId="toiletPaper" :points="100"/>
+    <ToiletPaper componentId="toiletPaper" :points="toiletPoints"/>
   </div>
 </template>
