@@ -100,7 +100,11 @@ export default {
     [TIMER_SUBTRACT_POINTS]: ({ commit, state }) => {
       const interval = setInterval(() => {
         // TELEPHONE RANDOM RING
-        if (Math.random(0, 40) === 10) commit(DESTROY_ROOM, { room: ROOM.BEDROOM_2 });
+        const ran = Math.floor(Math.random() * 20);
+        console.log('HEEEEY', ran);
+        if (ran === 10) {
+          commit(DESTROY_ROOM, { room: ROOM.BEDROOM_2 });
+        }
 
         Object.keys(state[ROOMS]).forEach(roomKey => {
           if (state[ROOMS][roomKey].needsAction) {

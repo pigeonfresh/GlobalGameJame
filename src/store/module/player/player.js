@@ -123,7 +123,7 @@ export default {
     [DO_PLAYER_ACTION]: ({ getters, commit, state, dispatch }) => {
       const roomKey = getters[GET_CURRENT_STEP];
       const room = getters[GET_ROOM](roomKey);
-      if ((room.canFix && room.points < 100) || room.needsAction) {
+      if ((room && room.canFix && room.points < 100) || room.needsAction) {
         commit(SET, {
           key: ACTION_COUNTER,
           value: Math.min(state[ACTION_COUNTER] + 1, MAX_ACTIONS_COUNTER),

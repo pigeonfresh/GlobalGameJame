@@ -16,18 +16,21 @@
 }
 
 .player-pick {
+  .cls1,
   .cls2 {
     fill: #231f20;
+  }
+  .cls2 {
     stroke: #231f20;
     stroke-miterlimit: 10;
     stroke-width: 2px;
   }
 
-  .step1 {
-    animation: pick 2s infinite;
-  }
-  .step2 {
-    animation: pick 2s infinite;
-    animation-delay: 1s;
+  .step {
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
   }
 }
