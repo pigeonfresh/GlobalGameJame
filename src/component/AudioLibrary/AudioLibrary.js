@@ -15,6 +15,7 @@ export default {
   },
   created() {
     eventBus.$on('play-sound-fx', this.playSoundFX);
+    this.hanldeUpdate();
     this.soundFX = new Howl({
       src: [`${this.$staticRoot}audio/sfx.mp3`],
       sprite: {
@@ -43,12 +44,18 @@ export default {
       },
     });
 
-    // this.startSoundTrack();
+    this.startSoundTrack();
   },
-  destroy() {
+  destroyed() {
     eventBus.$off('play-sound-fx', this.playSoundFX);
+    cancelAnimationFrame(this.raf);
   },
   methods: {
+    hanldeUpdate() {
+      this.gameMusic &&
+        eventBus.$emit('music-position', this.gameMusic.seek() / this.gameMusic.duration());
+      this.raf = requestAnimationFrame(this.hanldeUpdate);
+    },
     playSoundFX(id) {
       this.soundFX.play(id);
     },
