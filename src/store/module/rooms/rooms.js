@@ -22,7 +22,7 @@ export default {
       [ROOM.BASEMENT_2]: 100,
       [ROOM.BASEMENT_3]: 100,
       [ROOM.BASEMENT_4]: 100,
-      [ROOM.BATHROOM_1]: 100,
+      [ROOM.BATHROOM_1]: 0,
       [ROOM.BATHROOM_2]: 100,
       [ROOM.BEDROOM_1]: 100,
       [ROOM.BEDROOM_2]: 0,

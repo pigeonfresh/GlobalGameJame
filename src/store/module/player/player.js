@@ -1,6 +1,8 @@
 import ROOMS from '../../../data/enum/Rooms';
 import HOUSE from '../../../data/enum/House';
 import { match } from '../../utils';
+import eventBus from '../../../util/eventBus';
+import SOUND_FX from '../../../data/enum/SoundFX';
 
 const namespace = 'player';
 
@@ -38,6 +40,7 @@ export default {
             const newStep = Math.max(state[CURRENT_STEP] - 1, 0);
             state[DIRECTION] = DIRECTIONS.LEFT;
             state[CURRENT_STEP] = newStep;
+            eventBus.$emit('play-sound-fx', SOUND_FX.FOOTSTEP);
           },
         )
         .on(
@@ -47,6 +50,7 @@ export default {
             const newStep = Math.min(state[CURRENT_STEP] + 1, maxStepFloor);
             state[DIRECTION] = DIRECTIONS.RIGHT;
             state[CURRENT_STEP] = newStep;
+            eventBus.$emit('play-sound-fx', SOUND_FX.FOOTSTEP);
           },
         )
         .on(
@@ -60,6 +64,7 @@ export default {
                   state[DIRECTION] = DIRECTIONS.UP;
                   state[CURRENT_FLOOR] = 1;
                   state[CURRENT_STEP] = HOUSE[1].findIndex(r => r === ROOMS.MIDDLE_STAIRS_2);
+                  eventBus.$emit('play-sound-fx', SOUND_FX.FOOTSTEP);
                 },
               )
               .on(
@@ -68,6 +73,7 @@ export default {
                   state[DIRECTION] = DIRECTIONS.UP;
                   state[CURRENT_FLOOR] = 0;
                   state[CURRENT_STEP] = HOUSE[0].findIndex(r => r === ROOMS.TOP_STAIRS);
+                  eventBus.$emit('play-sound-fx', SOUND_FX.FOOTSTEP);
                 },
               );
           },
@@ -83,6 +89,7 @@ export default {
                   state[DIRECTION] = DIRECTIONS.DOWN;
                   state[CURRENT_FLOOR] = 1;
                   state[CURRENT_STEP] = HOUSE[1].findIndex(r => r === ROOMS.MIDDLE_STAIRS_1);
+                  eventBus.$emit('play-sound-fx', SOUND_FX.FOOTSTEP);
                 },
               )
               .on(
@@ -91,6 +98,7 @@ export default {
                   state[DIRECTION] = DIRECTIONS.DOWN;
                   state[CURRENT_FLOOR] = 2;
                   state[CURRENT_STEP] = HOUSE[2].findIndex(r => r === ROOMS.BOTTOM_STAIRS);
+                  eventBus.$emit('play-sound-fx', SOUND_FX.FOOTSTEP);
                 },
               );
           },

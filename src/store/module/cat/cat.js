@@ -3,6 +3,7 @@ import { GET_CURRENT_STEP } from '../player/player';
 import eventBus from '../../../util/eventBus';
 import SOUND_FX from '../../../data/enum/SoundFX';
 import { CAT_DETROYING, GET_UNDESTROYED_ROOMS } from '../rooms/rooms';
+import CAT_STATUS from '../../../data/enum/CatStatus';
 
 const namespace = 'cat';
 const ROOM = 'room';
@@ -31,15 +32,6 @@ const HAVOC_TIME = 4000 * TIME_MODIFIER;
 const DESTRUCTION_INTERVAL = 1000 * TIME_MODIFIER;
 
 const ACTION_TO_MAX = 4;
-
-const CAT_STATUS = {
-  IDLE: 'IDLE',
-  MEOWING: 'MEOW',
-  CREATING_CAOS: 'creating-caos',
-  BEING_PET: 'BEING_PET',
-  BEING_STOPPED: 'BEING_STOPPED',
-  NEUTRALIZED: 'NEUTRALIZED',
-};
 
 export default {
   state: {
