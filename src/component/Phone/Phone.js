@@ -10,9 +10,9 @@ export default {
     points: VueTypes.number.isRequired,
     needsAction: VueTypes.bool.isRequired,
   },
-  computed: {
-    activeStep() {
-      return 0;
+  watch: {
+    points() {
+      console.log('DO ANIMATION');
     },
   },
   methods: {

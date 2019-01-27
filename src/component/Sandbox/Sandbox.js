@@ -11,29 +11,9 @@ export default {
     points: VueTypes.number.isRequired,
     needsAction: VueTypes.bool.isRequired,
   },
-  computed: {
-    activeStep() {
-      const step = 1;
-      // match(this.points)
-      //   .on(
-      //     p => p <= 100 && p > 60,
-      //     () => {
-      //       step = 3;
-      //     },
-      //   )
-      //   .on(
-      //     p => p <= 60 && p > 0,
-      //     () => {
-      //       step = 2;
-      //     },
-      //   )
-      //   .on(
-      //     p => p === 0,
-      //     () => {
-      //       step = 1;
-      //     },
-      //   );
-      return step;
+  watch: {
+    points() {
+      console.log('DO ANIMATION');
     },
   },
   methods: {
