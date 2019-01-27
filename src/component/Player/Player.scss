@@ -27,11 +27,11 @@
     }
   }
 
-  &.ArrowLeft {
+  &.ArrowLeft .running {
     transform: scaleX(-1);
   }
 
-  &.ArrowRight {
+  &.ArrowRight .running {
     transform: scaleX(1);
   }
 
