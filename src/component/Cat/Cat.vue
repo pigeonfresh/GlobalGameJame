@@ -45,9 +45,9 @@
         ></path>
       </svg>
       <p>{{catStatus}}</p>
-      <div :class="[$style.actionCounterBar]">
+    </div>
+    <div :class="[$style.actionCounterBar]">
         <span :style="{width: `${statusBarWidth}%`}"></span>
       </div>
-    </div>
   </div>
 </template>

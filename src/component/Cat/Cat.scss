@@ -13,6 +13,21 @@
   }
 }
 
+@keyframes paw {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  34% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .catWrapper {
   position: absolute;
   top: 0;
@@ -87,6 +102,28 @@
   &.livingroom-1 {
     top: 20rem;
     left: 15rem;
+
+    .cat {
+      height: 7.5rem;
+      width: 7.5rem;
+      top: 9.4rem;
+      left: 4.2rem;
+      position: relative;
+      transform: rotateY(180deg);
+
+      .paw {
+        opacity: 0.5;
+        animation: tail 0.2s infinite;
+
+        &.paw2 {
+          animation-delay: 0.1s;
+        }
+
+        &.paw3 {
+          animation-delay: 0.2s;
+        }
+      }
+    }
   }
 
   &.livingroom-2 {
