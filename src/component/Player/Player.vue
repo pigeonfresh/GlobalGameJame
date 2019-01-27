@@ -9,7 +9,11 @@
         componentId="PlayerPhone"
         :class="[$style.state, isPhoneActive && $style.active]"
       />
-      <PlayerPick componentId="PlayerPick" :class="[$style.state, isBeginStop && $style.active]"/>
+      <PlayerPick
+        componentId="PlayerPick"
+        :class="[$style.state, (isBeginStop || isNeutralized) && $style.active]"
+        :step="isBeginStop"
+      />
       <PlayerPlunge
         componentId="PlayerPlunge"
         :class="[$style.state, isPlunging && $style.active]"

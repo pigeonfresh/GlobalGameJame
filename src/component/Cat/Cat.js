@@ -36,6 +36,9 @@ export default {
         this.catStatus,
       );
     },
+    hideCat() {
+      return [CAT_STATUS.NEUTRALIZED, CAT_STATUS.BEING_STOPPED].includes(this.catStatus);
+    },
   },
   created() {
     this.initCat();

@@ -4,7 +4,13 @@
 <template>
   <div :class="[$style.catWrapper, catPositionStyle]">
     <div :class="[$style.cat, catStatusStyle]">
-      <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+      <svg
+        id="Layer_1"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 80 80"
+        v-if="!hideCat"
+      >
         <path
           id="tail2"
           :class="[$style.cls, $style.tail, $style.tail1]"
