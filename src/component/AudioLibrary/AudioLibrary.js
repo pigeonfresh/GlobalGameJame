@@ -16,6 +16,7 @@ export default {
   },
   created() {
     eventBus.$on('play-sound-fx', this.playSoundFX);
+    eventBus.$on('start-game', this.startSoundTrack);
     this.hanldeUpdate();
     this.soundFX = new Howl({
       src: [`${this.$staticRoot}audio/sfx.mp3`],
@@ -44,11 +45,10 @@ export default {
         [SOUND_FX.CLOCKFAST]: [47000, 9000],
       },
     });
-
-    this.startSoundTrack();
   },
   destroyed() {
     eventBus.$off('play-sound-fx', this.playSoundFX);
+    eventBus.$off('start-game', this.startSoundTrack);
     cancelAnimationFrame(this.raf);
   },
   methods: {

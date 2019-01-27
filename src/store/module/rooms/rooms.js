@@ -18,6 +18,7 @@ export const TIMER_SUBTRACT_POINTS = `${namespace}/TIMER_SUBTRACT_POINTS`;
 export const SUBSTRACT_POINTS = `${namespace}/SUBSTRACT_POINTS`;
 export const HANDLE_ROOM_FIX = `${namespace}/HANDLE_ROOM_FIX`;
 export const RESET_ROOM = `${namespace}/RESET_ROOM`;
+export const GET_SCORE = `${namespace}/GET_SCORE`;
 
 const DESTRUCTION_STEP = 10;
 const SUBSTRACT_TIME = 1000;
@@ -42,6 +43,11 @@ export default {
     },
   },
   getters: {
+    [GET_SCORE]: state =>
+      Object.keys(state[ROOMS]).reduce((total, roomKey) => {
+        const res = total + state[ROOMS][roomKey].points;
+        return res;
+      }, 0),
     [GET_ROOM]: state => room => state[ROOMS][room],
     [GET_UNDESTROYED_ROOMS]: state =>
       Object.keys(state[ROOMS]).reduce((rooms, roomKey) => {

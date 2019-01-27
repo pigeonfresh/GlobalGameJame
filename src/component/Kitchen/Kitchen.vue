@@ -13,6 +13,8 @@
     <CatFood
       :class="[$style.catFood]"
       componentId="catFood"
+      :points="getKitchen2.points"
+      :needs-action="getKitchen2.needsAction"
     />
   </div>
 </template>

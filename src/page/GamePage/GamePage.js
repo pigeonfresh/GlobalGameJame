@@ -12,6 +12,7 @@ import Entrance from '../../component/Entrance';
 import Stairs from '../../component/Stairs';
 import Cat from '../../component/Cat';
 import Bg from '../../component/Bg';
+import EventBus from '../../util/eventBus';
 
 // @vue/component
 export default {
@@ -31,6 +32,9 @@ export default {
     Bg,
   },
   extends: AbstractPageTransitionComponent,
+  mounted() {
+    EventBus.$emit('start-game');
+  },
   methods: {
     handleAllComponentsReady() {
       this.transitionController = new GamePageTransitionController(this);

@@ -21,6 +21,9 @@ export default {
     getKitchen1() {
       return this.getRoom(Rooms.KITCHEN_1);
     },
+    getKitchen2() {
+      return this.getRoom(Rooms.KITCHEN_2);
+    },
   },
   methods: {
     handleAllComponentsReady() {
