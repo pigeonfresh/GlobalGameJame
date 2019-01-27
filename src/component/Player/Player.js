@@ -3,16 +3,15 @@ import { AbstractTransitionComponent } from 'vue-transition-component';
 import { GET_CURRENT_STEP, GET_DIRECTION } from '../../store/module/player/player';
 import PlayerTransitionController from './PlayerTransitionController';
 import { GET_CAT_ROOM } from '../../store/module/cat/cat';
-import PlayerIdle from '../../component/PlayerIdle';
-import PlayerPhone from '../../component/PlayerPhone';
-import PlayerPick from '../../component/PlayerPick';
-import PlayerPlunge from '../../component/PlayerPlunge';
-import PlayerRun from '../../component/PlayerRun';
+import PlayerIdle from '../PlayerIdle';
+import PlayerPhone from '../PlayerPhone';
+import PlayerPick from '../PlayerPick';
+import PlayerPlunge from '../PlayerPlunge';
+import PlayerRun from '../PlayerRun';
 
 // @vue/component
 export default {
   name: 'Player',
-  extends: AbstractTransitionComponent,
   components: {
     PlayerIdle,
     PlayerPhone,
@@ -20,6 +19,7 @@ export default {
     PlayerPlunge,
     PlayerRun,
   },
+  extends: AbstractTransitionComponent,
   computed: {
     ...mapGetters({
       playerRoom: GET_CURRENT_STEP,
