@@ -1,0 +1,34 @@
+@keyframes pat {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.player-pat {
+  .cls1,
+  .cls2 {
+    fill: #231f20;
+  }
+  .cls1 {
+    stroke: #231f20;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+
+  .step1 {
+    animation: pat 500ms infinite;
+  }
+  .step2 {
+    animation: pat 250ms infinite;
+    animation-delay: 1s;
+  }
+}

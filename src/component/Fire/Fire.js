@@ -7,6 +7,7 @@ export default {
   extends: AbstractTransitionComponent,
   props: {
     points: VueTypes.number.isRequired,
+    needsAction: VueTypes.bool.isRequired,
   },
   computed: {
     activeStep() {
