@@ -1,13 +1,49 @@
 .phone {
-  .step {
-    opacity: 0;
+  .step2,
+  .step3,
+  .step4 {
+    display: none;
+  }
 
-    &.active {
-      opacity: 1;
+  &.active {
+    .step1 {
+      animation: phone 0.5s infinite;
+    }
+    .step2 {
+      display: block;
+      animation: phone 0.5s infinite;
+      animation-delay: 0.12s;
+    }
+
+    .step3 {
+      display: block;
+      animation: phone 0.5s infinite;
+      animation-delay: 0.24s;
+    }
+
+    .step4 {
+      display: block;
+      animation: phone 0.5s infinite;
+      animation-delay: 0.32s;
     }
   }
 
   .cls1 {
     fill: #231f20;
+  }
+}
+
+@keyframes phone {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  26% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
