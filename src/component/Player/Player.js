@@ -95,7 +95,7 @@ export default {
       return (
         this.playerActionCounter > 0 &&
         this.playerActionCounter < 4 &&
-        [Rooms.TOILETTE, Rooms.BATHROOM_2].includes(this.playerRoom)
+        [Rooms.TOILETTE, Rooms.BATHROOM_2, Rooms.KITCHEN_1].includes(this.playerRoom)
       );
     },
   },
