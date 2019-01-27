@@ -18,5 +18,8 @@ export default {
     sandBox() {
       return this.getRoom(Rooms.BASEMENT_2);
     },
+    boxes() {
+      return this.getRoom(Rooms.BASEMENT_1);
+    },
   },
 };

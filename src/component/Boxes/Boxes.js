@@ -1,34 +1,24 @@
 import { AbstractTransitionComponent } from 'vue-transition-component';
+import VueTypes from 'vue-types';
 import BoxesTransitionController from './BoxesTransitionController';
-import { match } from '../../store/utils';
 
 // @vue/component
 export default {
   name: 'Boxes',
   extends: AbstractTransitionComponent,
+  props: {
+    points: VueTypes.number.isRequired,
+    needsAction: VueTypes.bool.isRequired,
+  },
   computed: {
-    activeStep() {
-      let step;
-      match(this.points)
-        .on(
-          p => p <= 100 && p > 60,
-          () => {
-            step = 1;
-          },
-        )
-        .on(
-          p => p <= 60 && p > 0,
-          () => {
-            step = 2;
-          },
-        )
-        .on(
-          p => p === 0,
-          () => {
-            step = 3;
-          },
-        );
-      return step;
+    showWithoutBox() {
+      return this.needsAction && false;
+    },
+    showNormal() {
+      return !this.needsAction;
+    },
+    showMess() {
+      return this.needsAction;
     },
   },
   methods: {

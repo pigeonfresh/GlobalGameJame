@@ -6,6 +6,8 @@
     <Boxes
       :class="[$style.boxes]"
       componentId="boxes"
+      :points="boxes.points"
+      :needs-action="boxes.needsAction"
     />
 
     <Sandbox
