@@ -78,3 +78,32 @@
     fill: #ffffff;
   }
 }
+
+.sun-moon {
+  position: absolute;
+  top: -10rem;
+  left: 20rem;
+  width: 20rem;
+  height: 20rem;
+
+  .cls0 {
+    fill: #ffffff;
+    stroke: #231f20;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+  }
+  .cls1 {
+    fill: none;
+    stroke: #231f20;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+  }
+  .cls2 {
+    fill: #231f20;
+  }
+
+  .moon {
+    display: none;
+  }
+}
