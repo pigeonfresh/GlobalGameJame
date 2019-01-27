@@ -4,7 +4,7 @@ import {
 } from 'vue-transition-component';
 import { TimelineMax } from 'gsap';
 
-export default class AtticTransitionController extends AbstractTransitionController {
+export default class FireTransitionController extends AbstractTransitionController {
   /**
    * Use this method to setup your transition in timeline
    *

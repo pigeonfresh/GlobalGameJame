@@ -1,13 +1,13 @@
 import { AbstractTransitionComponent } from 'vue-transition-component';
-import AtticTransitionController from './AtticTransitionController';
+import SandboxTransitionController from './SandboxTransitionController';
 
 // @vue/component
 export default {
-  name: 'Attic',
+  name: 'Sandbox',
   extends: AbstractTransitionComponent,
   methods: {
     handleAllComponentsReady() {
-      this.transitionController = new AtticTransitionController(this);
+      this.transitionController = new SandboxTransitionController(this);
       this.isReady();
     },
   },
