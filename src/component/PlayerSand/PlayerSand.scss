@@ -43,10 +43,10 @@
   }
 
   .step1 {
-    animation: pour 500ms infinite;
+    animation: pour 0.3s infinite;
   }
   .step2 {
-    animation: pour 250ms infinite;
-    animation-delay: 1s;
+    animation: pour 0.3s infinite;
+    animation-delay: 0.15s;
   }
 }
