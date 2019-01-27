@@ -4,6 +4,7 @@ import { mapGetters } from 'vuex';
 import { GET_ROOM_POINTS } from '../../store/module/rooms/rooms';
 import Rooms from '../../data/enum/Rooms';
 import Curtains from '../Curtains';
+import Phone from '../Phone';
 import BedRoomTransitionController from './BedRoomTransitionController';
 
 // @vue/component
@@ -11,6 +12,7 @@ export default {
   name: 'BedRoom',
   components: {
     Curtains,
+    Phone,
   },
   extends: AbstractTransitionComponent,
   computed: {
