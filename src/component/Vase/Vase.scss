@@ -1,6 +1,24 @@
 .vase {
+  transition: transform 0.2s ease;
+
   .cls1 {
     stroke: black;
     fill: white;
+  }
+
+  &.active-step-1 {
+    transform: translateX(0);
+  }
+
+  &.active-step-2 {
+    transform: translateX(-40px);
+  }
+
+  &.active-step-3 {
+    transform: translateX(-60px);
+  }
+
+  &.active-step-4 {
+    transform: translateX(-98px) translateY(70px) rotateZ(-439deg);
   }
 }

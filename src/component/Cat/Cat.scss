@@ -213,8 +213,9 @@
       height: 7.5rem;
       width: 7.5rem;
       top: 7.4rem;
-      left: -0.8rem;
+      left: 8.2rem;
       position: relative;
+      transform: rotateY(180deg);
 
       &.creating-caos {
         .paw {
