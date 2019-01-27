@@ -54,7 +54,7 @@ export default {
     },
     startSoundTrack() {
       this.gameMusic = new Howl({
-        src: [`${this.$staticRoot}audio/theme-song-short.mp3`],
+        src: [`${this.$staticRoot}audio/theme-song.mp3`],
         autoplay: true,
         onend: () => console.log('Finished!'), // eslint-disable-line no-console
       });
