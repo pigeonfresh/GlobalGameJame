@@ -25,7 +25,7 @@ export default {
       [ROOM.BATHROOM_1]: 100,
       [ROOM.BATHROOM_2]: 100,
       [ROOM.BEDROOM_1]: 100,
-      [ROOM.BEDROOM_2]: 100,
+      [ROOM.BEDROOM_2]: 0,
       [ROOM.KITCHEN_1]: 100,
       [ROOM.KITCHEN_2]: 100,
       [ROOM.LIVINGROOM_1]: 100,
