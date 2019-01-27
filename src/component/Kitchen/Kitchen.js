@@ -1,14 +1,14 @@
 import { AbstractTransitionComponent } from 'vue-transition-component';
-import Fire from '../../component/Fire';
+import Fire from '../Fire';
 import KitchenTransitionController from './KitchenTransitionController';
 
 // @vue/component
 export default {
   name: 'Kitchen',
-  extends: AbstractTransitionComponent,
   components: {
     Fire,
   },
+  extends: AbstractTransitionComponent,
   methods: {
     handleAllComponentsReady() {
       this.transitionController = new KitchenTransitionController(this);

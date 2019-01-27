@@ -22,6 +22,9 @@ export default {
     bedroom1Points() {
       return this.getRoomPoints(Rooms.BEDROOM_1);
     },
+    bedroom2Points() {
+      return this.getRoomPoints(Rooms.BEDROOM_2);
+    },
   },
   methods: {
     handleAllComponentsReady() {

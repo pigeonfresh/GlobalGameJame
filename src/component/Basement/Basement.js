@@ -1,5 +1,5 @@
 // @vue/component
-import Sandbox from '../../component/Sandbox';
+import Sandbox from '../Sandbox';
 
 export default {
   name: 'Basement',
