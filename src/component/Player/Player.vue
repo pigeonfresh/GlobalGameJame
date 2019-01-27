@@ -27,6 +27,6 @@
     <div :class="[$style.actionCounterBar]" v-if="!showActionCounterBar">
         <span :style="{width: `${statusBarWidth}%`}"></span>
       </div>
-    <p>{{playerActionCounter}}/4</p>
+    <!--<p>{{playerActionCounter}}/4</p>-->
   </div>
 </template>
