@@ -1,3 +1,33 @@
 /* stylelint-disable-next-line block-no-empty */
+
+@keyframes pick {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .player-pick {
+  .cls2 {
+    fill: #231f20;
+    stroke: #231f20;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+
+  .step1 {
+    animation: pick 2s infinite;
+  }
+  .step2 {
+    animation: pick 2s infinite;
+    animation-delay: 1s;
+  }
 }
