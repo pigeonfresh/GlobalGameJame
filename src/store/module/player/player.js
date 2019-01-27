@@ -2,7 +2,7 @@ import ROOMS from '../../../data/enum/Rooms';
 import HOUSE from '../../../data/enum/House';
 import { match } from '../../utils';
 
-const namespace = 'step';
+const namespace = 'player';
 
 export const MOVE = `${namespace}/MOVE`;
 export const GET_CURRENT_STEP = `${namespace}/GET_CURRENT_STEP`;

@@ -1,9 +1,11 @@
 import app from './module/app';
-import step from './module/step';
+import player from './module/player';
 import cat from './module/cat';
+import rooms from './module/rooms';
 
 export default {
   app,
-  step,
+  player,
   cat,
+  rooms,
 };

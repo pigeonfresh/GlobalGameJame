@@ -7,7 +7,7 @@ import {
   GET_CAT_STATUS,
   GET_ACTION_COUNTER,
 } from '../../store/module/cat/cat';
-import { GET_CURRENT_STEP } from '../../store/module/step/step';
+import { GET_CURRENT_STEP } from '../../store/module/player/player';
 
 // @vue/component
 export default {

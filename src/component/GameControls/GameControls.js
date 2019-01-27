@@ -2,7 +2,7 @@ import { AbstractTransitionComponent } from 'vue-transition-component';
 import { mapGetters, mapMutations, mapActions } from 'vuex';
 import GlobalEvents from 'vue-global-events';
 import GameControlsTransitionController from './GameControlsTransitionController';
-import { GET_CURRENT_STEP, MOVE } from '../../store/module/step/step';
+import { GET_CURRENT_STEP, MOVE } from '../../store/module/player/player';
 import { SET_DEVICE_STATE } from '../../store/module/app/app';
 import { GET_CAT_ROOM, DO_ACTION_TO_CAT } from '../../store/module/cat/cat';
 
