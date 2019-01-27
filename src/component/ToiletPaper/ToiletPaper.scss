@@ -1,0 +1,28 @@
+.toilet-paper {
+  .step {
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .cls1 {
+    fill: #231f20;
+  }
+  .cls2,
+  .cls3,
+  .cls4 {
+    fill: #fff;
+    stroke: #231f20;
+    stroke-miterlimit: 10;
+  }
+  .cls3,
+  .cls4 {
+    fill: none;
+    stroke-linecap: round;
+  }
+  .cls4 {
+    stroke-width: 0.75px;
+  }
+}
