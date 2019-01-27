@@ -1,8 +1,8 @@
-import ROOMS from '../../../data/enum/Rooms';
+// import ROOMS from '../../../data/enum/Rooms';
 import { GET_CURRENT_STEP } from '../player/player';
 import eventBus from '../../../util/eventBus';
 import SOUND_FX from '../../../data/enum/SoundFX';
-import { CAT_DETROYING } from '../rooms/rooms';
+import { CAT_DETROYING, GET_UNDESTROYED_ROOMS } from '../rooms/rooms';
 
 const namespace = 'cat';
 const ROOM = 'room';
@@ -23,7 +23,7 @@ export const START_HANDLED = `${namespace}/START_HANDLED`;
 export const DO_DESTRUCTION = `${namespace}/DO_DESTRUCTION`;
 export const SET = `${namespace}/SET`;
 
-const TIME_MODIFIER = 1 / 2;
+const TIME_MODIFIER = 1 / 3;
 
 const IDLE_TIME = 2000 * TIME_MODIFIER;
 const MEOW_TIME = 2000 * TIME_MODIFIER;
@@ -119,21 +119,9 @@ export default {
       dispatch(CAT_DETROYING);
     },
     [MOVE_CAT]: ({ commit, dispatch, state, getters }) => {
-      const catRooms = [
-        ROOMS.BEDROOM_1,
-        ROOMS.BEDROOM_2,
-        ROOMS.BATHROOM_1,
-        ROOMS.BATHROOM_2,
-        ROOMS.LIVINGROOM_1,
-        ROOMS.LIVINGROOM_2,
-        ROOMS.TOILETTE,
-        ROOMS.KITCHEN_1,
-        ROOMS.KITCHEN_2,
-        ROOMS.BASEMENT_1,
-        ROOMS.BASEMENT_2,
-        ROOMS.BASEMENT_3,
-        ROOMS.BASEMENT_4,
-      ].filter(r => r !== state[ROOM] && r !== getters[GET_CURRENT_STEP]); // dont go if player is there
+      const catRooms = getters[GET_UNDESTROYED_ROOMS].filter(
+        r => r !== state[ROOM] && r !== getters[GET_CURRENT_STEP],
+      ); // dont go if player is there
       const randomRoom = Math.floor(Math.random() * (catRooms.length - 1));
       dispatch(START_TIMER);
       commit(SET, { key: ROOM, value: catRooms[randomRoom] });

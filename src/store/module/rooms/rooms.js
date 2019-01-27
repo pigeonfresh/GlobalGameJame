@@ -53,10 +53,12 @@ export default {
       dispatch(DESTROY_SOUNDS, currentRoom);
     },
     [DESTROY_SOUNDS]: (_, room) => {
-      match(room).on(
-        r => r === ROOM.LIVINGROOM_1,
-        () => eventBus.$emit('play-sound-fx', SOUND_FX.SCRATCHING),
-      );
+      match(room)
+        .on(
+          r => [ROOM.LIVINGROOM_1, ROOM.BEDROOM_1].includes(r),
+          () => eventBus.$emit('play-sound-fx', SOUND_FX.SCRATCHING),
+        )
+        .on(r => r === ROOM.KITCHEN_2, () => eventBus.$emit('play-sound-fx', SOUND_FX.NOM));
     },
   },
 };
