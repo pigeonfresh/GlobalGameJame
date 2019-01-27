@@ -3,7 +3,7 @@
   height: 200px;
   width: 150px;
   z-index: 10;
-  background: linear-gradient(to right, red, transparent);
+  // background: linear-gradient(to right, red, transparent);
 
   .player {
     position: absolute;
@@ -15,11 +15,11 @@
   }
 
   &.ArrowLeft {
-    transform: scaleX(1);
+    transform: scaleX(-1);
   }
 
   &.ArrowRight {
-    transform: scaleX(-1);
+    transform: scaleX(1);
   }
 
   &.bedroom-1 {
