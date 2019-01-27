@@ -9,6 +9,7 @@ import {
 } from '../../store/module/cat/cat';
 import { GET_CURRENT_STEP } from '../../store/module/player/player';
 import CAT_STATUS from '../../data/enum/CatStatus';
+import { TIMER_SUBTRACT_POINTS } from '../../store/module/rooms/rooms';
 
 // @vue/component
 export default {
@@ -38,6 +39,7 @@ export default {
   },
   created() {
     this.initCat();
+    this.initRooms();
   },
   methods: {
     handleAllComponentsReady() {
@@ -46,6 +48,7 @@ export default {
     },
     ...mapActions({
       initCat: INIT_CAT,
+      initRooms: TIMER_SUBTRACT_POINTS,
     }),
   },
 };

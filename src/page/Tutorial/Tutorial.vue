@@ -171,6 +171,10 @@
 
 
       </router-link>
+
+      <GlobalEvents
+        @keyup.z="nextScreen()"
+      />
     </div>
   </div>
 </template>

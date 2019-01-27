@@ -1,33 +1,30 @@
 .intro-screen {
   position: relative;
 
-  .cls1 {
-    fill: none;
-    stroke: #000;
-    stroke-width: 4px;
-  }
-  .cls2,
-  .cls4 {
+  .cls3 {
     fill: #231f20;
   }
-  .cls2 {
+  .cls6 {
     stroke: #fff;
+  }
+  .cls2,
+  .cls5,
+  .cls6 {
     stroke-miterlimit: 10;
   }
-  .cls3 {
+  .cls2,
+  .cls5 {
     fill: #fff;
+    stroke: #231f20;
+  }
+  .cls2 {
+    stroke-width: 3px;
   }
   .cls5 {
-    fill: #fefefe;
+    stroke-width: 5px;
   }
-
-  .link {
-    position: absolute;
-    top: 2rem;
-    background: red;
-
-    &.gameJam {
-      background: blue;
-    }
+  .cls6 {
+    fill: none;
+    stroke-linecap: round;
   }
 }
