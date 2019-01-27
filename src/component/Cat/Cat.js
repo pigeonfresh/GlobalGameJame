@@ -8,6 +8,7 @@ import {
   GET_ACTION_COUNTER,
 } from '../../store/module/cat/cat';
 import { GET_CURRENT_STEP } from '../../store/module/player/player';
+import CAT_STATUS from '../../data/enum/CatStatus';
 
 // @vue/component
 export default {
@@ -29,10 +30,10 @@ export default {
     statusBarWidth() {
       return (this.actionCounter * 100) / 4;
     },
-  },
-  watch: {
-    playerRoom(room) {
-      room === this.catRoom && console.log('cat says: MEOW!!!'); // eslint-disable-line no-console
+    showActionCounterBar() {
+      return [CAT_STATUS.NEUTRALIZED, CAT_STATUS.BEING_PET, CAT_STATUS.BEING_STOPPED].includes(
+        this.catStatus,
+      );
     },
   },
   created() {

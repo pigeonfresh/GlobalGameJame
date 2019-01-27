@@ -46,8 +46,8 @@
       </svg>
     </div>
     <p>{{catStatus}}</p>
-    <div :class="[$style.actionCounterBar]">
-        <span :style="{width: `${statusBarWidth}%`}"></span>
-      </div>
+    <div :class="[$style.actionCounterBar]" v-if="showActionCounterBar">
+      <span :style="{width: `${statusBarWidth}%`}"></span>
+    </div>
   </div>
 </template>
