@@ -92,13 +92,19 @@ export default {
       commit(DESTROY_ROOM, { room: currentRoom });
       dispatch(DESTROY_SOUNDS, currentRoom);
     },
-    [DESTROY_SOUNDS]: (_, room) => {
+    [DESTROY_SOUNDS]: ({ state }, room) => {
       match(room)
         .on(
           r => [ROOM.LIVINGROOM_1, ROOM.BEDROOM_1].includes(r),
           () => eventBus.$emit('play-sound-fx', SOUND_FX.SCRATCHING),
         )
-        .on(r => r === ROOM.KITCHEN_2, () => eventBus.$emit('play-sound-fx', SOUND_FX.NOM));
+        .on(
+          r => r === ROOM.LIVINGROOM_2 || state[ROOMS][ROOM.LIVINGROOM_2].points < 10,
+          () => eventBus.$emit('play-sound-fx', SOUND_FX.VASEBREAKING),
+        )
+        .on(r => r === ROOM.KITCHEN_2, () => eventBus.$emit('play-sound-fx', SOUND_FX.NOM))
+        .on(r => r === ROOM.BEDROOM_2, () => eventBus.$emit('play-sound-fx', SOUND_FX.PHONERINGING))
+        .on(r => r === ROOM.KITCHEN_1, () => eventBus.$emit('play-sound-fx', SOUND_FX.FIRE));
     },
     [HANDLE_ROOM_FIX]: ({ commit }, roomKey) => {
       commit(RESET_ROOM, { room: roomKey });

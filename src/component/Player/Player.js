@@ -98,6 +98,12 @@ export default {
         [Rooms.TOILETTE, Rooms.BATHROOM_2, Rooms.KITCHEN_1].includes(this.playerRoom)
       );
     },
+    showActionCounterBar() {
+      return this.playerActionCounter > 0 && this.playerActionCounter < 4;
+    },
+    statusBarWidth() {
+      return (this.playerActionCounter * 100) / 4;
+    },
   },
   methods: {
     ...mapMutations({}),
