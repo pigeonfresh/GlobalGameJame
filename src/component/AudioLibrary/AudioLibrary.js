@@ -1,9 +1,12 @@
 import { AbstractTransitionComponent } from 'vue-transition-component';
 import { Howl, Howler } from 'howler';
+import { mapActions } from 'vuex';
+import { STOP_CAT } from '../../store/module/cat/cat';
 import AudioLibraryTransitionController from './AudioLibraryTransitionController';
 import eventBus from '../../util/eventBus';
 import SOUND_FX from '../../data/enum/SoundFX';
 import { RouteNames } from '../../router/routes';
+import { ROOM_STOP_DESTRUCTION } from '../../store/module/rooms/rooms';
 
 // @vue/component
 export default {
@@ -21,7 +24,9 @@ export default {
     this.soundFX = new Howl({
       src: [`${this.$staticRoot}audio/sfx.mp3`],
       sprite: {
-        [SOUND_FX.MEOW]: [0, 1000, false],
+        [SOUND_FX.MEOW_0]: [0, 1000, false],
+        [SOUND_FX.MEOW_1]: [50000, 1000, false],
+        [SOUND_FX.MEOW_2]: [51000, 1000, false],
         [SOUND_FX.PURR]: [2000, 4000],
         [SOUND_FX.NOM]: [6000, 1000],
         [SOUND_FX.PETTING]: [8000, 1000, false],
@@ -31,7 +36,7 @@ export default {
         [SOUND_FX.FOOTSTEP]: [13000, 1000],
         [SOUND_FX.LITTER]: [14000, 2000],
         [SOUND_FX.SCRATCHING]: [16000, 2000],
-        [SOUND_FX.FIRE]: [18000, 5000],
+        [SOUND_FX.FIRE]: [18000, 3000],
         [SOUND_FX.VASEPUT]: [23000, 1000],
         [SOUND_FX.VASEBREAKING]: [24000, 2000],
         [SOUND_FX.FAUCET]: [26000, 1000],
@@ -52,6 +57,10 @@ export default {
     cancelAnimationFrame(this.raf);
   },
   methods: {
+    ...mapActions({
+      stopCat: STOP_CAT,
+      stopDestruction: ROOM_STOP_DESTRUCTION,
+    }),
     hanldeUpdate() {
       this.gameMusic &&
         eventBus.$emit('music-position', this.gameMusic.seek() / this.gameMusic.duration());
@@ -72,7 +81,12 @@ export default {
       this.gameMusic.play();
     },
     startGameOver() {
-      // this.gameOver()
+      this.gameOver = new Howl({
+        src: [`${this.$staticRoot}audio/game-over.mp3`],
+      });
+      this.gameOver.play();
+      this.stopCat();
+      this.stopDestruction();
     },
     handleAllComponentsReady() {
       this.transitionController = new AudioLibraryTransitionController(this);

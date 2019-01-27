@@ -7,11 +7,7 @@ export default {
   extends: AbstractTransitionComponent,
   props: {
     points: VueTypes.number.isRequired,
-  },
-  watch: {
-    points() {
-      console.log('DO ANIMATION');
-    },
+    needsAction: VueTypes.bool.isRequired,
   },
   methods: {
     handleAllComponentsReady() {

@@ -23,6 +23,7 @@ export const DO_ACTION_TO_CAT = `${namespace}/DO_ACTION_TO_CAT`;
 export const START_HANDLED = `${namespace}/START_HANDLED`;
 export const DO_DESTRUCTION = `${namespace}/DO_DESTRUCTION`;
 export const SET = `${namespace}/SET`;
+export const STOP_CAT = `${namespace}/STOP_CAT`;
 
 const TIME_MODIFIER = 1 / 3;
 
@@ -69,7 +70,8 @@ export default {
     },
     [START_MEOW]: ({ commit, dispatch, state }) => {
       commit(SET, { key: STATUS, value: CAT_STATUS.MEOWING });
-      state[ACTION_COUNTER] === 0 && eventBus.$emit('play-sound-fx', SOUND_FX.MEOW);
+      state[ACTION_COUNTER] === 0 &&
+        eventBus.$emit('play-sound-fx', SOUND_FX[`MEOW_${Math.floor(Math.random() * 3)}`]);
       const timer = setTimeout(() => {
         dispatch(STAR_HAVOC);
       }, MEOW_TIME);
@@ -120,6 +122,9 @@ export default {
     },
     [INIT_CAT]: ({ dispatch }) => {
       dispatch(MOVE_CAT);
+    },
+    [STOP_CAT]: ({ state }) => {
+      clearTimeout(state[TIMER]);
     },
   },
 };

@@ -56,10 +56,11 @@ export default {
         // !this.isIdleActive &&
         !this.isPhoneActive &&
         !this.isPlunging &&
-        !this.isBeginStop &&
         !this.isFoodActive &&
         !this.isSandActive &&
-        !this.isPattingActive
+        !this.isPattingActive &&
+        !this.isBeginStop &&
+        !this.isNeutralized
       );
     },
     isIdleActive() {

@@ -1,5 +1,7 @@
 export default {
-  MEOW: 'meow',
+  MEOW_0: 'meow-0',
+  MEOW_1: 'meow-1',
+  MEOW_2: 'meow-2',
   PURR: 'purr',
   NOM: 'nom',
   PETTING: 'petting',

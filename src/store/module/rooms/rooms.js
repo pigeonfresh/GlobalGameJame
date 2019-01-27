@@ -19,6 +19,7 @@ export const SUBSTRACT_POINTS = `${namespace}/SUBSTRACT_POINTS`;
 export const HANDLE_ROOM_FIX = `${namespace}/HANDLE_ROOM_FIX`;
 export const RESET_ROOM = `${namespace}/RESET_ROOM`;
 export const GET_SCORE = `${namespace}/GET_SCORE`;
+export const ROOM_STOP_DESTRUCTION = `${namespace}/ROOM_STOP_DESTRUCTION`;
 
 const DESTRUCTION_STEP = 10;
 const SUBSTRACT_TIME = 1000;
@@ -84,9 +85,17 @@ export default {
     },
     [SUBSTRACT_POINTS]: (state, room) => {
       state[ROOMS][room].points -= DESTRUCTION_STEP;
+
+      match(room).on(
+        r => r === ROOM.BEDROOM_2,
+        () => eventBus.$emit('play-sound-fx', SOUND_FX.PHONERINGING),
+      );
     },
   },
   actions: {
+    [ROOM_STOP_DESTRUCTION]: ({ state }) => {
+      clearInterval(state[INTERVAL]);
+    },
     [CAT_DETROYING]: ({ getters, commit, dispatch }) => {
       const currentRoom = getters[GET_CAT_ROOM];
       commit(DESTROY_ROOM, { room: currentRoom });
@@ -95,15 +104,21 @@ export default {
     [DESTROY_SOUNDS]: ({ state }, room) => {
       match(room)
         .on(
-          r => [ROOM.LIVINGROOM_1, ROOM.BEDROOM_1].includes(r),
+          r =>
+            [
+              ROOM.LIVINGROOM_1,
+              ROOM.BEDROOM_1,
+              ROOM.TOILETTE,
+              ROOM.BASEMENT_1,
+              ROOM.BATHROOM_2,
+            ].includes(r),
           () => eventBus.$emit('play-sound-fx', SOUND_FX.SCRATCHING),
         )
         .on(
-          r => r === ROOM.LIVINGROOM_2 || state[ROOMS][ROOM.LIVINGROOM_2].points < 10,
+          r => r === ROOM.LIVINGROOM_2 && state[ROOMS][ROOM.LIVINGROOM_2].points === 10,
           () => eventBus.$emit('play-sound-fx', SOUND_FX.VASEBREAKING),
         )
         .on(r => r === ROOM.KITCHEN_2, () => eventBus.$emit('play-sound-fx', SOUND_FX.NOM))
-        .on(r => r === ROOM.BEDROOM_2, () => eventBus.$emit('play-sound-fx', SOUND_FX.PHONERINGING))
         .on(r => r === ROOM.KITCHEN_1, () => eventBus.$emit('play-sound-fx', SOUND_FX.FIRE));
     },
     [HANDLE_ROOM_FIX]: ({ commit }, roomKey) => {
@@ -112,8 +127,7 @@ export default {
     [TIMER_SUBTRACT_POINTS]: ({ commit, state }) => {
       const interval = setInterval(() => {
         // TELEPHONE RANDOM RING
-        const ran = Math.floor(Math.random() * 20);
-        console.log('HEEEEY', ran);
+        const ran = Math.floor(Math.random() * 30);
         if (ran === 10) {
           commit(DESTROY_ROOM, { room: ROOM.BEDROOM_2 });
         }
