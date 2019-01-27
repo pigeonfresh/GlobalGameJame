@@ -4,11 +4,7 @@
 <template>
   <div :class="[$style.homePage]">
     <div :class="[$style.panel]">
-      <router-link :to="{ name: RouteNames.TUTORIAL }">
-
-        <IntroScreen :class="[$style.IntroScreen]" componentId="IntroScreen" />
-
-      </router-link>
+      <IntroScreen :class="[$style.IntroScreen]" componentId="IntroScreen"/>
     </div>
   </div>
 </template>

@@ -1,11 +1,33 @@
 .intro-screen {
+  position: relative;
+
   .cls1 {
     fill: none;
     stroke: #000;
     stroke-width: 4px;
   }
+  .cls2,
+  .cls4 {
+    fill: #231f20;
+  }
   .cls2 {
     stroke: #fff;
     stroke-miterlimit: 10;
+  }
+  .cls3 {
+    fill: #fff;
+  }
+  .cls5 {
+    fill: #fefefe;
+  }
+
+  .link {
+    position: absolute;
+    top: 2rem;
+    background: red;
+
+    &.gameJam {
+      background: blue;
+    }
   }
 }
