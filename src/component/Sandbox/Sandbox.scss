@@ -1,13 +1,30 @@
 .sandbox {
-  .step {
-    opacity: 0;
+  .step1 {
+    animation: smell 1s infinite;
+  }
 
-    &.active {
-      opacity: 1;
-    }
+  .step2 {
+    animation: smell 1s infinite;
+    animation-delay: 0.5s;
   }
 
   .cls1 {
     fill: #231f20;
+  }
+}
+
+@keyframes smell {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
   }
 }

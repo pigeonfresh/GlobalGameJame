@@ -1,17 +1,33 @@
 .fire {
-  .step {
+  .step1 {
+    animation: fire 250ms infinite;
+  }
+
+  .step2 {
+    animation: fire 250ms infinite;
+    animation-delay: 0.125s;
+  }
+
+  .cls1 {
+    fill: #231f20;
+  }
+
+  .cls1 {
+    fill: #231f20;
+  }
+}
+
+@keyframes fire {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
     opacity: 0;
-
-    &.active {
-      opacity: 1;
-    }
   }
-
-  .cls1 {
-    fill: #231f20;
-  }
-
-  .cls1 {
-    fill: #231f20;
+  100% {
+    opacity: 0;
   }
 }
