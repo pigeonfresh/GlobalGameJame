@@ -16,6 +16,8 @@ export const DESTROY_SOUNDS = `${namespace}/DESTROY_SOUNDS`;
 export const SET = `${namespace}/SET`;
 export const TIMER_SUBTRACT_POINTS = `${namespace}/TIMER_SUBTRACT_POINTS`;
 export const SUBSTRACT_POINTS = `${namespace}/SUBSTRACT_POINTS`;
+export const HANDLE_ROOM_FIX = `${namespace}/HANDLE_ROOM_FIX`;
+export const RESET_ROOM = `${namespace}/RESET_ROOM`;
 
 const DESTRUCTION_STEP = 10;
 const SUBSTRACT_TIME = 1000;
@@ -53,6 +55,15 @@ export default {
       }, []),
   },
   mutations: {
+    [RESET_ROOM]: (state, { room }) => {
+      if (state[ROOMS][room]) {
+        if (state[ROOMS][room].pointable) {
+          state[ROOMS][room].points = 100;
+        } else {
+          state[ROOMS][room].needsAction = false;
+        }
+      }
+    },
     [DESTROY_ROOM]: (state, { room }) => {
       if (state[ROOMS][room]) {
         if (state[ROOMS][room].pointable) {
@@ -83,11 +94,13 @@ export default {
         )
         .on(r => r === ROOM.KITCHEN_2, () => eventBus.$emit('play-sound-fx', SOUND_FX.NOM));
     },
+    [HANDLE_ROOM_FIX]: ({ commit }, roomKey) => {
+      commit(RESET_ROOM, { room: roomKey });
+    },
     [TIMER_SUBTRACT_POINTS]: ({ commit, state }) => {
       const interval = setInterval(() => {
         // TELEPHONE RANDOM RING
-        if (Math.random(0, 40)) {
-        }
+        if (Math.random(0, 40)) commit(DESTROY_ROOM, { room: ROOM.BEDROOM_2 });
 
         Object.keys(state[ROOMS]).forEach(roomKey => {
           if (state[ROOMS][roomKey].needsAction) {

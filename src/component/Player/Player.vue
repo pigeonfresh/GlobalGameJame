@@ -13,5 +13,6 @@
       <PlayerSand componentId="PlayerSand" :class="[$style.state]"/>
       <PlayerPat componentId="PlayerPat" :class="[$style.state]"/>
     </div>
+    <p>{{playerActionCounter}}/4</p>
   </div>
 </template>

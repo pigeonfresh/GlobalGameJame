@@ -3,7 +3,7 @@ import HOUSE from '../../../data/enum/House';
 import { match } from '../../utils';
 import eventBus from '../../../util/eventBus';
 import SOUND_FX from '../../../data/enum/SoundFX';
-import { GET_ROOM } from '../rooms/rooms';
+import { GET_ROOM, HANDLE_ROOM_FIX } from '../rooms/rooms';
 
 const namespace = 'player';
 
@@ -120,13 +120,21 @@ export default {
     },
   },
   actions: {
-    [DO_PLAYER_ACTION]: ({ getters, commit, state }) => {
+    [DO_PLAYER_ACTION]: ({ getters, commit, state, dispatch }) => {
       const roomKey = getters[GET_CURRENT_STEP];
       const room = getters[GET_ROOM](roomKey);
-      console.log(room, roomKey);
-      // if (state[ACTION_COUNTER] === MAX_ACTIONS_COUNTER) {
-      //   console.log('FIXED!');
-      // }
+      if ((room.canFix && room.points < 100) || room.needsAction) {
+        commit(SET, {
+          key: ACTION_COUNTER,
+          value: Math.min(state[ACTION_COUNTER] + 1, MAX_ACTIONS_COUNTER),
+        });
+      }
+      if (
+        ((room.canFix && room.points < 100) || room.needsAction) &&
+        state[ACTION_COUNTER] === MAX_ACTIONS_COUNTER
+      ) {
+        dispatch(HANDLE_ROOM_FIX, roomKey);
+      }
     },
   },
 };
