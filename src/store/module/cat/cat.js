@@ -22,10 +22,12 @@ export const START_HANDLED = `${namespace}/START_HANDLED`;
 export const DO_DESTRUCTION = `${namespace}/DO_DESTRUCTION`;
 export const SET = `${namespace}/SET`;
 
-const IDLE_TIME = 2000;
-const MEOW_TIME = 2000;
-const HAVOC_TIME = 4000;
-const DESTRUCTION_INTERVAL = 1000;
+const TIME_MODIFIER = 1 / 1;
+
+const IDLE_TIME = 2000 * TIME_MODIFIER;
+const MEOW_TIME = 2000 * TIME_MODIFIER;
+const HAVOC_TIME = 4000 * TIME_MODIFIER;
+const DESTRUCTION_INTERVAL = 1000 * TIME_MODIFIER;
 
 const ACTION_TO_MAX = 4;
 

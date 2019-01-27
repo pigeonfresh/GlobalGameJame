@@ -1,5 +1,8 @@
+import { match } from '../../utils';
 import { GET_CAT_ROOM } from '../cat/cat';
 import ROOM from '../../../data/enum/Rooms';
+import eventBus from '../../../util/eventBus';
+import SOUND_FX from '../../../data/enum/SoundFX';
 
 const namespace = 'rooms';
 
@@ -8,6 +11,7 @@ export const CAT_DETROYING = `${namespace}/CAT_DETROYING`;
 export const DESTROY_ROOM = `${namespace}/DESTROY_ROOM`;
 export const GET_ROOM_POINTS = `${namespace}/GET_ROOM_POINTS`;
 export const GET_UNDESTROYED_ROOMS = `${namespace}/GET_UNDESTROYED_ROOMS`;
+export const DESTROY_SOUNDS = `${namespace}/DESTROY_SOUNDS`;
 
 const DESTRUCTION_STEP = 10;
 
@@ -43,9 +47,16 @@ export default {
     },
   },
   actions: {
-    [CAT_DETROYING]: ({ getters, commit }) => {
+    [CAT_DETROYING]: ({ getters, commit, dispatch }) => {
       const currentRoom = getters[GET_CAT_ROOM];
       commit(DESTROY_ROOM, { room: currentRoom });
+      dispatch(DESTROY_SOUNDS, currentRoom);
+    },
+    [DESTROY_SOUNDS]: (_, room) => {
+      match(room).on(
+        r => r === ROOM.LIVINGROOM_1,
+        () => eventBus.$emit('play-sound-fx', SOUND_FX.SCRATCHING),
+      );
     },
   },
 };

@@ -50,16 +50,13 @@ export default {
   },
   methods: {
     playSoundFX(id) {
-      console.log(this.soundFX);
       this.soundFX.play(id);
     },
     startSoundTrack() {
       this.gameMusic = new Howl({
         src: [`${this.$staticRoot}audio/theme-song-short.mp3`],
         autoplay: true,
-        onend() {
-          SOUND_FX.console.log('Finished!'); // eslint-disable-line no-console
-        },
+        onend: () => console.log('Finished!'), // eslint-disable-line no-console
       });
       this.gameMusic.play();
     },
