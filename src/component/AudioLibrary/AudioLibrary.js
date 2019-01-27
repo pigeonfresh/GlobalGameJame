@@ -3,6 +3,7 @@ import { Howl, Howler } from 'howler';
 import AudioLibraryTransitionController from './AudioLibraryTransitionController';
 import eventBus from '../../util/eventBus';
 import SOUND_FX from '../../data/enum/SoundFX';
+import { RouteNames } from '../../router/routes';
 
 // @vue/component
 export default {
@@ -63,9 +64,15 @@ export default {
       this.gameMusic = new Howl({
         src: [`${this.$staticRoot}audio/theme-song.mp3`],
         autoplay: true,
-        onend: () => console.log('Finished!'), // eslint-disable-line no-console
+        onend: () => {
+          this.$router.push({ name: RouteNames.GAME_OVER });
+          this.startGameOver();
+        },
       });
       this.gameMusic.play();
+    },
+    startGameOver() {
+      // this.gameOver()
     },
     handleAllComponentsReady() {
       this.transitionController = new AudioLibraryTransitionController(this);
