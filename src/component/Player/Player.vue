@@ -11,6 +11,7 @@
       <PlayerFood componentId="PlayerFood" :class="[$style.state]"/>
       <PlayerRun componentId="PlayerRun" :class="[$style.state, $style.running]"/>
       <PlayerSand componentId="PlayerSand" :class="[$style.state]"/>
+      <PlayerPat componentId="PlayerPat" :class="[$style.state]"/>
     </div>
   </div>
 </template>

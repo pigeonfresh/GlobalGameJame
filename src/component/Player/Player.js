@@ -10,6 +10,7 @@ import PlayerPlunge from '../../component/PlayerPlunge';
 import PlayerRun from '../../component/PlayerRun';
 import PlayerFood from '../../component/PlayerFood';
 import PlayerSand from '../../component/PlayerSand';
+import PlayerPat from '../../component/PlayerPat';
 
 // @vue/component
 export default {
@@ -22,6 +23,7 @@ export default {
     PlayerRun,
     PlayerFood,
     PlayerSand,
+    PlayerPat,
   },
   extends: AbstractTransitionComponent,
   computed: {
