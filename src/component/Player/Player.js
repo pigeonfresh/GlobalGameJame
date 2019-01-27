@@ -51,6 +51,17 @@ export default {
     playerDirectionStyle() {
       return this.$style[this.playerDirection];
     },
+    isRunning() {
+      return (
+        // !this.isIdleActive &&
+        !this.isPhoneActive &&
+        !this.isPlunging &&
+        !this.isBeginStop &&
+        !this.isFoodActive &&
+        !this.isSandActive &&
+        !this.isPattingActive
+      );
+    },
     isIdleActive() {
       return false;
     },

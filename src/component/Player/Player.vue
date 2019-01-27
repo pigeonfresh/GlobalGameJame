@@ -15,7 +15,7 @@
         :class="[$style.state, isPlunging && $style.active]"
       />
       <PlayerFood componentId="PlayerFood" :class="[$style.state, isFoodActive && $style.active]"/>
-      <PlayerRun componentId="PlayerRun" :class="[$style.state, $style.running]"/>
+      <PlayerRun componentId="PlayerRun" :class="[$style.state, $style.running, isRunning && $style.active]"/>
       <PlayerSand componentId="PlayerSand" :class="[$style.state, isSandActive && $style.active]"/>
       <PlayerPat componentId="PlayerPat" :class="[$style.state, isPattingActive && $style.active]"/>
     </div>

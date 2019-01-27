@@ -19,10 +19,10 @@
   }
 
   .step1 {
-    animation: plunge 500ms infinite;
+    animation: plunge 0.3s infinite;
   }
   .step2 {
-    animation: plunge 250ms infinite;
-    animation-delay: 1s;
+    animation: plunge 0.3s infinite;
+    animation-delay: 0.15s;
   }
 }

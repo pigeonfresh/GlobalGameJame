@@ -32,10 +32,10 @@
   }
 
   .step1 {
-    animation: feed 500ms infinite;
+    animation: feed 0.4s infinite;
   }
   .step2 {
-    animation: feed 250ms infinite;
-    animation-delay: 1s;
+    animation: feed 0.4s infinite;
+    animation-delay: 0.2s;
   }
 }
