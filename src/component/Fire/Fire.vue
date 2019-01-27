@@ -3,7 +3,7 @@
 
 <template>
   <div :class="[$style.fire]">
-    <p :class="[$style.points]">{{points}}</p>
+    <p :class="[$style.points]" v-if="needsAction">{{points}}</p>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200" v-if="needsAction">
       <g id="Layer_1" :class="[$style.step1]" data-name="Layer 1">
         <path

@@ -3,7 +3,7 @@
 
 <template>
   <div :class="[$style.phone, needsAction && $style.active]">
-    <p>{{points}}</p>
+    <p v-if="needsAction" :class="[$style.points]">{{points}}</p>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200">
       <g id="Layer_2" :class="[$style.step1]" data-name="Layer 2">
         <path
