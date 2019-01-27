@@ -2,7 +2,7 @@ import {
   AbstractTransitionController,
   IAbstractTransitionComponent,
 } from 'vue-transition-component';
-import { TimelineMax } from 'gsap';
+import { TimelineMax, Expo } from 'gsap';
 
 export default class TutorialTransitionController extends AbstractTransitionController {
   /**
@@ -18,7 +18,20 @@ export default class TutorialTransitionController extends AbstractTransitionCont
     timeline: TimelineMax,
     parent: IAbstractTransitionComponent,
     id: string,
-  ): void {}
+  ): void {
+    const element = parent.$el;
+
+    timeline.from(
+      element,
+      1.5,
+      {
+        autoAlpha: 0,
+        y: 200,
+        ease: Expo.easeInOut,
+      },
+      'start',
+    );
+  }
 
   /**
    * Use this method to setup your transition out timeline
