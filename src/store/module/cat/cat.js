@@ -2,6 +2,7 @@ import ROOMS from '../../../data/enum/Rooms';
 import { GET_CURRENT_STEP } from '../player/player';
 import eventBus from '../../../util/eventBus';
 import SOUND_FX from '../../../data/enum/SoundFX';
+import { CAT_DETROYING } from '../rooms/rooms';
 
 const namespace = 'cat';
 const ROOM = 'room';
@@ -22,7 +23,7 @@ export const START_HANDLED = `${namespace}/START_HANDLED`;
 export const DO_DESTRUCTION = `${namespace}/DO_DESTRUCTION`;
 export const SET = `${namespace}/SET`;
 
-const TIME_MODIFIER = 1 / 1;
+const TIME_MODIFIER = 1 / 2;
 
 const IDLE_TIME = 2000 * TIME_MODIFIER;
 const MEOW_TIME = 2000 * TIME_MODIFIER;
@@ -89,7 +90,6 @@ export default {
         dispatch(MOVE_CAT);
         clearInterval(state[INTERVAL]);
       }, HAVOC_TIME);
-
       dispatch(DO_DESTRUCTION);
       const interval = setInterval(() => {
         dispatch(DO_DESTRUCTION);
@@ -115,8 +115,8 @@ export default {
         }
       }
     },
-    [DO_DESTRUCTION]: () => {
-      console.log('DESTROIIIIIII!!!');
+    [DO_DESTRUCTION]: ({ dispatch }) => {
+      dispatch(CAT_DETROYING);
     },
     [MOVE_CAT]: ({ commit, dispatch, state, getters }) => {
       const catRooms = [
