@@ -125,6 +125,7 @@ export default {
     },
     [STOP_CAT]: ({ state }) => {
       clearTimeout(state[TIMER]);
+      clearInterval(state[INTERVAL]);
     },
   },
 };
