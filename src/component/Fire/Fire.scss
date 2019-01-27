@@ -17,6 +17,29 @@
   }
 }
 
+.points {
+  position: absolute;
+  top: 80px;
+  left: 143px;
+  transform: translateX(-50%);
+  color: black;
+  font-weight: bold;
+  font-size: 12px;
+  animation: points 1s infinite;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+@keyframes points {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
+  }
+}
+
 @keyframes fire {
   0% {
     opacity: 1;
