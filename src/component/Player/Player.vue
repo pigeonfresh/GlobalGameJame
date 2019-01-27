@@ -23,6 +23,10 @@
       <PlayerSand componentId="PlayerSand" :class="[$style.state, isSandActive && $style.active]"/>
       <PlayerPat componentId="PlayerPat" :class="[$style.state, isPattingActive && $style.active]"/>
     </div>
+
+    <div :class="[$style.actionCounterBar]" v-if="!showActionCounterBar">
+        <span :style="{width: `${statusBarWidth}%`}"></span>
+      </div>
     <p>{{playerActionCounter}}/4</p>
   </div>
 </template>

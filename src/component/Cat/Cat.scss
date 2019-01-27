@@ -40,6 +40,7 @@
   z-index: 10;
 
   p {
+    display: none;
     color: red;
     position: absolute;
   }
@@ -379,8 +380,8 @@
   background: white;
   overflow: hidden;
   position: absolute;
-  bottom: 90px;
-  left: 47px;
+  bottom: 140px;
+  left: 70px;
   transform: translateX(-50%);
 
   span {

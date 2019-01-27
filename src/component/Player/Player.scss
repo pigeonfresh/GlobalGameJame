@@ -129,3 +129,28 @@
     left: 105rem;
   }
 }
+
+.actionCounterBar {
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 10px;
+  width: 70px;
+  background: white;
+  overflow: hidden;
+  position: absolute;
+  bottom: 90px;
+  left: 47px;
+  transform: translateX(-50%);
+
+  span {
+    height: 100%;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent 0px,
+      transparent 3px,
+      black 3px,
+      black 6px
+    );
+    display: block;
+  }
+}
