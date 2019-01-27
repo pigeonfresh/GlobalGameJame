@@ -186,7 +186,14 @@
       top: 8.4rem;
       left: 4.2rem;
       position: relative;
-      transform: rotateY(180deg);
+
+      svg {
+        transform: rotateY(180deg);
+      }
+
+      .actionCounterBar {
+        left: 24px;
+      }
 
       &.creating-caos {
         .paw {
@@ -215,7 +222,14 @@
       top: 7.4rem;
       left: 8.2rem;
       position: relative;
-      transform: rotateY(180deg);
+
+      svg {
+        transform: rotateY(180deg);
+      }
+
+      .actionCounterBar {
+        left: 24px;
+      }
 
       &.creating-caos {
         .paw {
@@ -278,7 +292,14 @@
       top: 13.2rem;
       left: 4.2rem;
       position: relative;
-      transform: rotateY(180deg);
+
+      svg {
+        transform: rotateY(180deg);
+      }
+
+      .actionCounterBar {
+        left: 24px;
+      }
     }
   }
 
@@ -358,10 +379,9 @@
   background: white;
   overflow: hidden;
   position: absolute;
-  bottom: 0;
-  left: 50%;
+  bottom: 90px;
+  left: 47px;
   transform: translateX(-50%);
-  display: none;
 
   span {
     height: 100%;
