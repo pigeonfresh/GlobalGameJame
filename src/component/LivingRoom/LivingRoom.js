@@ -1,5 +1,6 @@
 import { mapGetters } from 'vuex';
 import ArmChair from '../ArmChair';
+import Vase from '../Vase';
 import { GET_ROOM_POINTS } from '../../store/module/rooms/rooms';
 import ROOMS from '../../data/enum/Rooms';
 
@@ -8,6 +9,7 @@ export default {
   name: 'LivingRoom',
   components: {
     ArmChair,
+    Vase,
   },
   computed: {
     ...mapGetters({
