@@ -1,0 +1,20 @@
+.arm-chair {
+  .step {
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .cls1 {
+    fill: #fff;
+    stroke: #231f20;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+
+  .cls2 {
+    fill: #231f20;
+  }
+}

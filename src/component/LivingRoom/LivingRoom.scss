@@ -1,3 +1,10 @@
-/* stylelint-disable-next-line block-no-empty */
 .living-room {
+  .armChair {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15rem;
+    z-index: 9;
+  }
 }
