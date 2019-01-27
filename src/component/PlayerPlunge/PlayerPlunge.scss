@@ -1,0 +1,28 @@
+@keyframes plunge {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.player-plunge {
+  .cls1 {
+    fill: #231f20;
+  }
+
+  .step1 {
+    animation: plunge 2s infinite;
+  }
+  .step2 {
+    animation: plunge 2s infinite;
+    animation-delay: 1s;
+  }
+}

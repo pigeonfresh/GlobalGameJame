@@ -1,3 +1,10 @@
-/* stylelint-disable-next-line block-no-empty */
 .bath-room {
+  .toilet-paper {
+    position: absolute;
+    width: 15rem;
+    height: 20rem;
+    left: 15.2rem;
+    top: 0px;
+    transform: rotateY(180deg);
+  }
 }
