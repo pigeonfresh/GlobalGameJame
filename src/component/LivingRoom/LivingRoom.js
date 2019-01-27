@@ -1,7 +1,7 @@
 import { mapGetters } from 'vuex';
 import ArmChair from '../ArmChair';
 import Vase from '../Vase';
-import { GET_ROOM_POINTS } from '../../store/module/rooms/rooms';
+import { GET_ROOM } from '../../store/module/rooms/rooms';
 import ROOMS from '../../data/enum/Rooms';
 
 // @vue/component
@@ -13,13 +13,13 @@ export default {
   },
   computed: {
     ...mapGetters({
-      getRoomPoints: GET_ROOM_POINTS,
+      getRoom: GET_ROOM,
     }),
     living1Points() {
-      return this.getRoomPoints(ROOMS.LIVINGROOM_1);
+      return this.getRoom(ROOMS.LIVINGROOM_1).points;
     },
     living2Points() {
-      return this.getRoomPoints(ROOMS.LIVINGROOM_2);
+      return this.getRoom(ROOMS.LIVINGROOM_2).points;
     },
   },
 };

@@ -114,7 +114,7 @@ export default {
       const catRooms = getters[GET_UNDESTROYED_ROOMS].filter(
         r => r !== state[ROOM] && r !== getters[GET_CURRENT_STEP],
       ); // dont go if player is there
-      const randomRoom = Math.floor(Math.random() * (catRooms.length - 1));
+      const randomRoom = Math.floor(Math.random() * catRooms.length);
       dispatch(START_TIMER);
       commit(SET, { key: ROOM, value: catRooms[randomRoom] });
     },

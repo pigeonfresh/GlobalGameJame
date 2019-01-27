@@ -1,7 +1,7 @@
 import { AbstractTransitionComponent } from 'vue-transition-component';
 
 import { mapGetters } from 'vuex';
-import { GET_ROOM_POINTS } from '../../store/module/rooms/rooms';
+import { GET_ROOM } from '../../store/module/rooms/rooms';
 import Rooms from '../../data/enum/Rooms';
 import Curtains from '../Curtains';
 import Phone from '../Phone';
@@ -17,13 +17,13 @@ export default {
   extends: AbstractTransitionComponent,
   computed: {
     ...mapGetters({
-      getRoomPoints: GET_ROOM_POINTS,
+      getRoom: GET_ROOM,
     }),
     bedroom1Points() {
-      return this.getRoomPoints(Rooms.BEDROOM_1);
+      return this.getRoom(Rooms.BEDROOM_1).points;
     },
     bedroom2Points() {
-      return this.getRoomPoints(Rooms.BEDROOM_2);
+      return this.getRoom(Rooms.BEDROOM_2).points;
     },
   },
   methods: {

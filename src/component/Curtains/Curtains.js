@@ -24,7 +24,7 @@ export default {
           },
         )
         .on(
-          p => p <= 40 && p > 10,
+          p => p <= 40 && p > 0,
           () => {
             step = 3;
           },
