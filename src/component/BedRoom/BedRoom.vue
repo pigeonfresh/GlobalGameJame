@@ -3,6 +3,6 @@
 
 <template>
   <div :class="[$style.bedRoom]">
-    <h2>BedRoom</h2>
+    <Curtains :class="[$style.curtains]" componentId="curtains" />
   </div>
 </template>

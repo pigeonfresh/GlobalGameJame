@@ -1,0 +1,20 @@
+.curtains {
+  .step {
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .cls1 {
+    fill: white;
+    stroke: black;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+  }
+
+  .cls2 {
+    fill: black;
+  }
+}
