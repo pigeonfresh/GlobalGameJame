@@ -1,0 +1,41 @@
+@keyframes feed {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.player-food {
+  .cls1,
+  .cls3 {
+    fill: #231f20;
+  }
+  .cls2,
+  .cls3 {
+    stroke: #231f20;
+    stroke-miterlimit: 10;
+  }
+  .cls2 {
+    fill: #fff;
+    stroke-width: 3px;
+  }
+  .cls3 {
+    stroke-width: 2px;
+  }
+
+  .step1 {
+    animation: feed 500ms infinite;
+  }
+  .step2 {
+    animation: feed 250ms infinite;
+    animation-delay: 1s;
+  }
+}

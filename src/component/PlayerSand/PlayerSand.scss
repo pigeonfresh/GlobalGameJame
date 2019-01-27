@@ -1,0 +1,52 @@
+@keyframes pour {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.player-sand {
+  .cls1,
+  .cls3 {
+    fill: #231f20;
+  }
+  .cls2,
+  .cls4 {
+    fill: #fff;
+  }
+  .cls2,
+  .cls3 {
+    stroke: #231f20;
+  }
+  .cls2,
+  .cls3,
+  .cls4 {
+    stroke-miterlimit: 10;
+  }
+  .cls2 {
+    stroke-width: 3px;
+  }
+  .cls3 {
+    stroke-width: 2px;
+  }
+  .cls4 {
+    stroke: #000;
+    stroke-width: 0.5px;
+  }
+
+  .step1 {
+    animation: pour 500ms infinite;
+  }
+  .step2 {
+    animation: pour 250ms infinite;
+    animation-delay: 1s;
+  }
+}
