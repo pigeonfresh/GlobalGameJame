@@ -2,7 +2,7 @@
 <script src="./Phone.js"></script>
 
 <template>
-  <div :class="[$style.phone, !needsAction && $style.active]">
+  <div :class="[$style.phone, needsAction && $style.active]">
      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200">
      <g id="Layer_2" :class="[$style.step1]" data-name="Layer 2">
       <path :class="[$style.cls1]" d="M98.53 125.73v-1.29a4.22 4.22 0 0 0-4.27-4.15l-15-.12h-.71a4.23 4.23 0 0 0-4.15 4.27v1.29a2.65 2.65 0 0 0 2.69 2.61h2.26a2.66 2.66 0 0 0 2.65-2.71v-.78l9 .12v.87a2.65 2.65 0 0 0 2.69 2.61h2.26a2.66 2.66 0 0 0 2.58-2.72z" id="Layer_1" data-name="Layer 1"/>
