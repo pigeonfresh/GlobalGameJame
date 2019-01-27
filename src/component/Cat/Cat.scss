@@ -144,6 +144,29 @@
   &.toilet {
     top: 20rem;
     left: 45rem;
+
+    .cat {
+      height: 7.5rem;
+      width: 7.5rem;
+      top: 9.2rem;
+      left: 0.2rem;
+      position: relative;
+
+      &.creating-caos {
+        .paw {
+          opacity: 0.5;
+          animation: tail 0.2s infinite;
+
+          &.paw2 {
+            animation-delay: 0.1s;
+          }
+
+          &.paw3 {
+            animation-delay: 0.2s;
+          }
+        }
+      }
+    }
   }
 
   &.entrance {
@@ -216,11 +239,43 @@
   &.kitchen-1 {
     top: 20rem;
     left: 75rem;
+
+    .cat {
+      height: 7.5rem;
+      width: 7.5rem;
+      top: 6.7rem;
+      left: 4.2rem;
+      position: relative;
+
+      &.creating-caos {
+        .paw {
+          opacity: 0.5;
+          animation: tail 0.2s infinite;
+
+          &.paw2 {
+            animation-delay: 0.1s;
+          }
+
+          &.paw3 {
+            animation-delay: 0.2s;
+          }
+        }
+      }
+    }
   }
 
   &.kitchen-2 {
     top: 20rem;
     left: 90rem;
+
+    .cat {
+      height: 7.5rem;
+      width: 7.5rem;
+      top: 13.2rem;
+      left: 4.2rem;
+      position: relative;
+      transform: rotateY(180deg);
+    }
   }
 
   &.middlestairs-2 {
@@ -236,21 +291,53 @@
   &.basement-1 {
     top: 40rem;
     left: 45rem;
+
+    .cat {
+      height: 7.5rem;
+      width: 7.5rem;
+      top: 13.5rem;
+      left: 2.3rem;
+      position: relative;
+    }
   }
 
   &.basement-2 {
     top: 40rem;
     left: 60rem;
+
+    .cat {
+      height: 7.5rem;
+      width: 7.5rem;
+      top: 13.5rem;
+      left: 2.3rem;
+      position: relative;
+    }
   }
 
   &.basement-3 {
     top: 40rem;
     left: 75rem;
+
+    .cat {
+      height: 7.5rem;
+      width: 7.5rem;
+      top: 13.5rem;
+      left: 2.3rem;
+      position: relative;
+    }
   }
 
   &.basement-4 {
     top: 40rem;
     left: 90rem;
+
+    .cat {
+      height: 7.5rem;
+      width: 7.5rem;
+      top: 13.5rem;
+      left: 2.3rem;
+      position: relative;
+    }
   }
 
   &.bottom-stairs {
@@ -270,6 +357,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  display: none;
 
   span {
     height: 100%;
