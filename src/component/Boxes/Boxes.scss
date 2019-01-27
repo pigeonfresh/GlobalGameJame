@@ -1,0 +1,35 @@
+.boxes {
+  .step {
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .cls0 {
+    fill: #ffffff;
+    stroke: #231f20;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+  }
+  .cls1 {
+    fill: #231f20;
+  }
+  .cls2 {
+    fill: #ffffff;
+    stroke: #231f20;
+    stroke-miterlimit: 10;
+  }
+  .cls3 {
+    fill: #ffffff;
+    stroke: #231f20;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+  }
+
+  svg {
+    position: relative;
+    top: 6.1rem;
+  }
+}
