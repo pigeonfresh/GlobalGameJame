@@ -7,9 +7,7 @@
       <div>
         <div :class="[$style.gameScreen]">
           <div :class="[$style.backgroundWrapper]">
-            <img :src="`${$staticRoot}image/bg.jpg`" />
-
-
+            <Bg />
           </div>
 
           <div :class="[$style.roomsWrapper]">
