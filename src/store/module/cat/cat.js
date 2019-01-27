@@ -107,7 +107,7 @@ export default {
       const counter = state[ACTION_COUNTER];
       if ([CAT_STATUS.IDLE, CAT_STATUS.MEOWING, CAT_STATUS.CREATING_CAOS].includes(state[STATUS])) {
         commit(SET, { key: ACTION_COUNTER, value: counter + 1 });
-        eventBus.$emit('play-sound-fx', SOUND_FX.PURR);
+        eventBus.$emit('play-sound-fx', SOUND_FX.PETTING);
         if (counter === ACTION_TO_MAX - 1) {
           dispatch(START_HANDLED);
         }
