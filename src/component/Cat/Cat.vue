@@ -2,8 +2,8 @@
 <script src="./Cat.js"></script>
 
 <template>
-  <div :class="[$style.catWrapper, catPositionStyle, catStatusStyle]">
-    <div :class="[$style.cat]">
+  <div :class="[$style.catWrapper, catPositionStyle]">
+    <div :class="[$style.cat, catStatusStyle]">
       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
         <path
           id="tail2"
@@ -44,8 +44,8 @@
           d="M56.92 49.22a.45.45 0 0 1 .55-.5 4.27 4.27 0 0 0 4.13-1c2.07-2.07 3-3.67 5.05-7.48 2.46-4.54 7.76-6.3 10.37-2.85 1.23 1.64 1 4.53-1.13 5.45a3.16 3.16 0 0 1-3.33-.38s-2.92 7.46-6.91 9.15c-4.44 1.87-8.3.56-8.73-2.39z"
         ></path>
       </svg>
-      <p>{{catStatus}}</p>
     </div>
+    <p>{{catStatus}}</p>
     <div :class="[$style.actionCounterBar]">
         <span :style="{width: `${statusBarWidth}%`}"></span>
       </div>
