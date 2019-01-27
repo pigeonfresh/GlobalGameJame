@@ -13,8 +13,8 @@ export default {
     ...mapGetters({
       getRoom: GET_ROOM,
     }),
-    sandBoxPoints() {
-      return this.getRoom(Rooms.BASEMENT_2).points;
+    sandBox() {
+      return this.getRoom(Rooms.BASEMENT_2);
     },
   },
 };

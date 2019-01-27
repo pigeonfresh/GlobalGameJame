@@ -22,8 +22,8 @@ export default {
     bedroom1Points() {
       return this.getRoom(Rooms.BEDROOM_1).points;
     },
-    bedroom2Points() {
-      return this.getRoom(Rooms.BEDROOM_2).points;
+    bedroom2() {
+      return this.getRoom(Rooms.BEDROOM_2);
     },
   },
   methods: {

@@ -3,6 +3,11 @@
 
 <template>
   <div :class="[$style.basement]">
-    <Sandbox :class="[$style.sandBox]" componentId="sandBox" :points="sandBoxPoints"/>
+    <Sandbox
+      :class="[$style.sandBox]"
+      componentId="sandBox"
+      :points="sandBox.points"
+      :needs-action="sandBox.needsAction"
+    />
   </div>
 </template>

@@ -1,6 +1,6 @@
 import { AbstractTransitionComponent } from 'vue-transition-component';
 import VueTypes from 'vue-types';
-import { match } from '../../store/utils';
+// import { match } from '../../store/utils';
 import SandboxTransitionController from './SandboxTransitionController';
 
 // @vue/component
@@ -9,6 +9,7 @@ export default {
   extends: AbstractTransitionComponent,
   props: {
     points: VueTypes.number.isRequired,
+    needsAction: VueTypes.bool.isRequired,
   },
   computed: {
     activeStep() {
